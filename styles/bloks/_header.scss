@@ -1,0 +1,82 @@
+@use "../helpers" as * ;
+.header {
+  background-color: var(--blue);
+  margin-bottom: var(--spacingSection);
+  position: sticky;
+  top: -100px;
+  padding-block: 5px;
+  animation-name: stickyHeader;
+  animation-timeline: scroll();
+  animation-fill-mode: both;
+  animation-range: 0 150px;
+  transition: var(--smoothly);
+  top: 0;
+  &__novigation
+  {
+    &__group
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      li 
+      {
+        a 
+        {
+          font-size: rem(18);
+          position: relative;
+          transition: var(--smoothly);
+          font-family: var(--RussoOne-Regular);
+          &:active 
+          {
+            color: var(--blue-dark);
+          }
+          &:not(.logo-link)
+          {
+            &::after
+            {
+              content: "";
+              position: absolute;
+              width: 0%;
+              height: 2px;
+              background-color: var(--blue-gray);
+              bottom: -2px;
+              left: 0;
+              transition: var(--smoothly);
+              left: 50%;
+              transform: translateX(-50%);
+            } 
+            @include hover 
+            {
+              &::after 
+              {
+                width: 100%;
+              }
+            }
+            &:focus-visible {
+              padding: 5px;
+              outline: none;
+              border-inline: solid 2px black;
+            }
+          }
+          img 
+          {
+            aspect-ratio: 1;
+            width: fluid(100,70);
+            min-width: 50px;
+            max-width: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes stickyHeader 
+{
+  to 
+  {
+    box-shadow: -2px 2px 19px 0px rgba(56, 73, 89, 1);
+    padding-top: 10px;
+    border-radius: 0 0 30% 30%;
+  }
+}

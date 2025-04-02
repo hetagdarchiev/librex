@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../assets/fonts/Montserrat/Montserrat-Bold/Montserrat-Bold.woff2") format("woff2"), url("../assets/fonts/Montserrat/Montserrat-Bold/Montserrat-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../assets/fonts/Montserrat/Montserrat-Medium/Montserrat-Medium.woff2") format("woff2"), url("../assets/fonts/Montserrat/Montserrat-Medium/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../assets/fonts/Montserrat/Montserrat-Regular/Montserrat-Regular.woff2") format("woff2"), url("../assets/fonts/Montserrat/Montserrat-Regular/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Russo-One-Regular";
+  src: url("../assets/fonts/RussoOne/RussoOne-Regular/RussoOne-Regular.woff2") format("woff2"), url("assets/fonts/RussoOne/RussoOne-Regular/RussoOne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --blue-gray: #6a89a6;
+  --blue-light: #bcddfc;
+  --blue: #87bdf1;
+  --blue-dark: #384959;
+  --white: #fff;
+  --Montserrat-Regular: "Montserrat-Regular";
+  --Montserrat-Medium: "Montserrat-Medium";
+  --Montserrat-Bold: "Montserrat-Bold";
+  --RussoOne-Regular: "Russo-One-Regular";
+  --font-max: 48px;
+  --font-h2: 34px;
+  --font-h3: 28px;
+  --font-h4: 22px;
+  --font-min:18px;
+  --spacingSection: 50px;
+  --smoothly: .2s ,easy-in;
+}
+
+body {
+  font-family: var(--Montserrat-Medium), serif;
+  font-size: var(--font-min);
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.container {
+  max-width: 1480px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.header {
+  background-color: var(--blue);
+  margin-bottom: var(--spacingSection);
+  position: sticky;
+  top: -100px;
+  padding-block: 5px;
+  animation-name: stickyHeader;
+  animation-timeline: scroll();
+  animation-fill-mode: both;
+  animation-range: 0 150px;
+  transition: var(--smoothly);
+  top: 0;
+}
+.header__novigation__group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.header__novigation__group li a {
+  font-size: 1.125rem;
+  position: relative;
+  transition: var(--smoothly);
+  font-family: var(--RussoOne-Regular);
+}
+.header__novigation__group li a:active {
+  color: var(--blue-dark);
+}
+.header__novigation__group li a:not(.logo-link)::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--blue-gray);
+  bottom: -2px;
+  left: 0;
+  transition: var(--smoothly);
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (any-hover: hover) {
+  .header__novigation__group li a:not(.logo-link):hover::after {
+    width: 100%;
+  }
+}
+.header__novigation__group li a:not(.logo-link):active::after {
+  width: 100%;
+}
+.header__novigation__group li a:not(.logo-link):focus-visible {
+  padding: 5px;
+  outline: none;
+  border-inline: solid 2px black;
+}
+.header__novigation__group li a img {
+  aspect-ratio: 1;
+  width: clamp(4.375rem, 3.9423076923rem + 1.9230769231vw, 6.25rem);
+  min-width: 50px;
+  max-width: 100px;
+}
+
+@keyframes stickyHeader {
+  to {
+    box-shadow: -2px 2px 19px 0px rgb(56, 73, 89);
+    padding-top: 10px;
+    border-radius: 0 0 30% 30%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,6 @@
+@use "./helpers" as *;
+
+.container
+{
+  @include container(1440,20)
+}

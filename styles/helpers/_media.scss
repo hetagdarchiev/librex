@@ -1,0 +1,33 @@
+$maxSize: 1921px;
+$loptop: 1441px;
+$tablet: 721px;
+
+@mixin full {
+  @media (max-width: $maxSize) {
+    @content;
+  }
+}
+
+@mixin loptop {
+  @media (max-width: $loptop) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin hover($hasActiveEffectMobile:true) {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @if ($hasActiveEffectMobile) {
+    &:active {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "normalize": "github:hetagdarchiev/normalizeCss"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
+  },
+  "name": "electroniclibrary",
+  "version": "1.0.0",
+  "description": "This is my term paper.",
+  "main": "index.js",
+  "scripts": {
+    "test": "strt",
+    "sass-watcher": "sass --watch ."
+  },
+  "author": "Khetag Darchiev",
+  "license": "ISC"
+}
