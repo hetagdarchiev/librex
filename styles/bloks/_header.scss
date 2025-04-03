@@ -67,6 +67,12 @@
             max-width: 100px;
           }
         }
+        .logo-link
+        {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
       }
     }
   }
