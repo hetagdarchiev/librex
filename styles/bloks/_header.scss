@@ -3,6 +3,7 @@
   background-color: var(--blue);
   margin-bottom: var(--spacingSection);
   position: sticky;
+  z-index: 5;
   top: -100px;
   padding-block: 5px;
   animation-name: stickyHeader;

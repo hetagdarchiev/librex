@@ -1,9 +1,9 @@
 :root {
-  --blue-gray: #6a89a6;
-  --blue-light: #bcddfc;
-  --blue: #87bdf1;
-  --blue-dark: #384959;
-  --white: #fff;
+  --blue-gray: hsl(209, 25%, 53%);
+  --blue-light: rgb(187, 220, 252);
+  --blue: hsl(209, 79%, 74%);
+  --blue-dark: hsl(209, 23%, 28%);
+  --white: hsl(0, 0%, 100%);
 
   --Montserrat-Regular: "Montserrat-Regular";
   --Montserrat-Medium: "Montserrat-Medium";
@@ -17,5 +17,7 @@
 
   --spacingSection: 50px;
 
-  --smoothly: .2s ,easy-in;
+  --smoothly: .2s ease-in;
+  --slow: .3s ease;
+  --br-20: 20px
 }

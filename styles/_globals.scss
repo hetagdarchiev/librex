@@ -1,7 +1,25 @@
+@use "sass:math";
 body
 {
   font-family: var(--Montserrat-Medium), serif;
   font-size: var(--font-min);
   background-color: var(--blue);
   color: var(--white);
+  &::-webkit-scrollbar 
+  {
+    background-color: var(--blue-gray);
+    max-width: 7px;
+  }
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: var(--blue);
+    border-radius: var(--br-20);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+h3
+{
+  font-family: var(--Montserrat-Bold);
+  font-size:var(--font-h3);
 }
