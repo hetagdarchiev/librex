@@ -1,5 +1,6 @@
 @use "../helpers/" as *;
 .swiper {
+    margin-bottom: var(--spacingSection);
     width: 100%;
     max-width: 1500px;
     padding-block: 50px;

@@ -52,6 +52,7 @@ body {
   font-size: var(--font-min);
   background-color: var(--blue);
   color: var(--white);
+  letter-spacing: 1px;
 }
 body::-webkit-scrollbar {
   background-color: var(--blue-gray);
@@ -66,7 +67,7 @@ body::-webkit-scrollbar-thumb {
 
 h3 {
   font-family: var(--Montserrat-Bold);
-  font-size: var(--font-h3);
+  font-size: clamp(1.375rem, 1.2884615385rem + 0.3846153846vw, 1.75rem);
 }
 
 .container {
@@ -149,6 +150,7 @@ h3 {
   }
 }
 .swiper {
+  margin-bottom: var(--spacingSection);
   width: 100%;
   max-width: 1500px;
   padding-block: 50px;
@@ -215,4 +217,19 @@ h3 {
 .swiper-swiper-slide img {
   display: block;
   width: 100%;
+}
+
+.recs {
+  max-width: 1540px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+.recs-item {
+  background-color: var(--blue-gray);
+  max-width: 500px;
+  padding: 10px;
+  border-radius: var(--br-20);
+}
+.recs-item__img {
+  border-radius: var(--br-20);
 }/*# sourceMappingURL=main.css.map */

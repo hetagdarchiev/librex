@@ -1,10 +1,12 @@
 @use "sass:math";
+@use "./helpers/" as * ;
 body
 {
   font-family: var(--Montserrat-Medium), serif;
   font-size: var(--font-min);
   background-color: var(--blue);
   color: var(--white);
+  letter-spacing: 1px;
   &::-webkit-scrollbar 
   {
     background-color: var(--blue-gray);
@@ -21,5 +23,5 @@ body
 h3
 {
   font-family: var(--Montserrat-Bold);
-  font-size:var(--font-h3);
+  font-size: fluid(28,22);
 }

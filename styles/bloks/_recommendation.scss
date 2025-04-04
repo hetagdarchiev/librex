@@ -1,0 +1,16 @@
+@use "../helpers/" as *;
+.recs 
+{
+    @include container(1500,20);
+    &-item 
+    {
+        background-color: var(--blue-gray);
+        max-width: 500px;
+        padding: 10px;
+        border-radius: var(--br-20);
+        &__img 
+        {
+            border-radius: var(--br-20);
+        }
+    }
+}
