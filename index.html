@@ -100,6 +100,55 @@
           </ul>
         </nav>
       </div>
+      <div class="burger">
+        <button class="burger__button">
+          <img
+          class="logo"
+          src="./assets/icons/123123213.svg"
+          alt="CapyLibria"
+          width="60"
+          />
+        </button>
+        <div class="burger__wrapper">
+          <ul class="burger__menu">
+            <li>
+              <a
+                href="#"
+                class="nav-main"
+                aria-label="All books"
+                title="Все книги"
+              >
+                Книги
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-books"
+                title="Shopping"
+                aria-label="Shopping"
+              >
+                Корзина
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-other"
+                aria-label="Favorite"
+                title="Favorite"
+              >
+                Любимые
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-us" aria-label="about us" title="about us">
+                О нас
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
     <main>
       <section class="swiper">
@@ -111,7 +160,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -129,7 +178,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -147,7 +196,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -165,7 +214,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -183,7 +232,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -201,7 +250,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -219,7 +268,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -237,7 +286,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -255,7 +304,7 @@
               title="перейти к книге"
               aria-label="перейти к книге"
             >
-              <img src="assets/images/128_rus.jpg" alt="" />
+              <img src="assets/images/128_rus.jpg" alt="book" />
             </a>
             <div class="swiper-slide__item">
               <h3 class="swiper-slide__item__name">Name</h3>
@@ -270,24 +319,86 @@
         <div class="swiper-pagination"></div>
       </section>
       <section class="recs">
-        <article class="recs-item">
-          <a href="#" class="recs-item__image-link">
-            <img
-              src="./assets/images/levTolstoi.jpg"
-              alt=""
-              class="recs-item__img"
-            />
-            <h3 class="recs-item__title">
-              Интересные книги Льва Никалаевича Толстова
-            </h3>
-            <p class="recs-item__description"></p>
-          </a>
-        </article>
+        <div>
+          <h2>Популярные Авторы</h2>
+        </div>
+        <div class="recs-group">
+          <article class="recs-item">
+            <a
+              href="#"
+              class="recs-item__link"
+              title="Произведения писателя"
+              aria-label="Произведения писателя"
+            >
+              <div class="recs-item__img-wrapper">
+                <img
+                  class="recs-item__img"
+                  src="./assets/images/levTolstoi.jpg"
+                  width="1280"
+                  height="1020"
+                  alt=""
+                />
+              </div>
+              <div class="recs-item__content">
+                <h4 class="recs-item__title">Лев Николаевич Толстой</h4>
+                <p class="recs-item__meta">
+                  Количество доступных произведений: 12
+                </p>
+              </div>
+            </a>
+          </article>
+          <article class="recs-item">
+            <a
+              href="#"
+              class="recs-item__link"
+              title="Произведения писателя"
+              aria-label="Произведения писателя"
+            >
+              <div class="recs-item__img-wrapper">
+                <img
+                  class="recs-item__img"
+                  src="./assets/images/alexandrPushkin.jpg"
+                  width="1280"
+                  height="1020"
+                  alt=""
+                />
+              </div>
+              <div class="recs-item__content">
+                <h4 class="recs-item__title">Александр Сергеевич Пушкин</h4>
+                <p class="recs-item__meta">
+                  Количество доступных произведений: 12
+                </p>
+              </div>
+            </a>
+          </article>
+          <article class="recs-item">
+            <a
+              href="#"
+              class="recs-item__link"
+              title="Произведения писателя"
+              aria-label="Произведения писателя"
+            >
+              <div class="recs-item__img-wrapper">
+                <img
+                  class="recs-item__img"
+                  src="./assets/images/fedorDostoevski.jpg"
+                  width="1280"
+                  height="1020"
+                  alt=""
+                />
+              </div>
+              <div class="recs-item__content">
+                <h4 class="recs-item__title">Фёдор Михайлович Достоевский</h4>
+                <p class="recs-item__meta">
+                  Количество доступных произведений: 12
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
       </section>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
   </body>
   <script src="./lib/package/swiper-bundle.js"></script>
 </html>

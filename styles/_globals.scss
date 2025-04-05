@@ -2,7 +2,7 @@
 @use "./helpers/" as * ;
 body
 {
-  font-family: var(--Montserrat-Medium), serif;
+  font-family: var(--Montserrat-Regular), serif;
   font-size: var(--font-min);
   background-color: var(--blue);
   color: var(--white);
@@ -20,8 +20,38 @@ body
     border-top-right-radius: 0;
   }
 }
+h1
+{
+  font-size: fluid(48,42);
+}
+h2 
+{
+  width: fit-content;
+  margin-inline: auto;
+  font-size: fluid(38,32);
+  margin-bottom: fluid(30,20);
+  position: relative;
+  text-align: center;
+  &::before 
+  {
+    content: "";
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: var(--blue-dark);
+    bottom: -5px;
+    height: 5px;
+    border-radius: 25%;
+  }
+}
 h3
 {
   font-family: var(--Montserrat-Bold);
   font-size: fluid(28,22);
+}
+h4 
+{
+  font-family: var(--Montserrat-Bold);
+  font-size: fluid(22,18);
 }

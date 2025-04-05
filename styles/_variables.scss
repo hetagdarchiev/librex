@@ -1,4 +1,5 @@
-:root {
+@use "./helpers/" as *;
+html{
   --blue-gray: hsl(209, 25%, 53%);
   --blue-light: rgb(187, 220, 252);
   --blue: hsl(209, 79%, 74%);
@@ -9,6 +10,7 @@
   --Montserrat-Medium: "Montserrat-Medium";
   --Montserrat-Bold: "Montserrat-Bold";
   --RussoOne-Regular: "Russo-One-Regular";
+
   --font-max: 48px;
   --font-h2: 34px;
   --font-h3: 28px;
@@ -16,7 +18,7 @@
   --font-min:18px;
   
   --spacingSection: 50px;
-
+  
   --smoothly: .2s ease-in;
   --slow: .3s ease;
   --br-20: 20px

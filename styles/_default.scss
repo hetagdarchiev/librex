@@ -4,3 +4,11 @@
 {
   @include container(1440,20)
 }
+.scale 
+{
+  transform: scale(1.1);
+}
+.active 
+{
+  display: block !important;
+}
