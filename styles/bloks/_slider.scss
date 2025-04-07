@@ -5,6 +5,7 @@
     max-width: 1500px;
     padding-bottom: fluid(50,20);
     border-radius: var(--br-20);
+    padding-top: 10px;
     &-slide {
         background-position: center;
         box-shadow: 0 8px 12px -5px rgba(0, 0, 0, 0.2);
@@ -46,10 +47,10 @@
             overflow: hidden;
             transition: var(--slow);
             text-overflow: ellipsis;
-            transform: translateY(85%);
+            transform: translateY(75%);
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: fluid(100,40);
             &:hover {
                 transform: translateY(50px);
             }
