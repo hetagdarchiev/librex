@@ -1,0 +1,31 @@
+@use "../helpers/" as *;
+.start-section {
+    padding-block: 100px;
+    .main-title {
+        span {
+            position: relative;
+            &::after {
+                content: "";
+                width: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50px;
+                background-color: black;
+                height: fluid(50,40);
+                position: absolute;
+                animation-name: cursor;
+                animation-iteration-count: infinite;
+                animation-duration: 0.6s;
+                animation-timing-function: steps(2);
+            }
+        }
+    }
+}
+@keyframes cursor {
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}

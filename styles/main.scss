@@ -3,6 +3,9 @@
 @use "globals";
 @use "default";
 
+@use "bloks/burger-menu";
+
 @use "bloks/header";
+@use "bloks/start-section";
 @use "bloks/slider";
-@use "bloks/recommendation"
+@use "bloks/best-authors"

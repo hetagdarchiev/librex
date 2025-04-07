@@ -1,9 +1,9 @@
 @use "../helpers/" as *;
 .swiper {
-    margin-bottom: fluid(50,10);
+    margin-bottom: fluid(100,10);
     width: 100%;
     max-width: 1500px;
-    padding-block: fluid(50,20);
+    padding-bottom: fluid(50,20);
     border-radius: var(--br-20);
     &-slide {
         background-position: center;
@@ -59,9 +59,9 @@
             }
         }
     }
-
     &-swiper-slide img {
         display: block;
         width: 100%;
     }
+    
 }

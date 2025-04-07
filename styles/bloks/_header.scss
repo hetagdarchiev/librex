@@ -1,7 +1,7 @@
 @use "../helpers" as *;
 .header {
   background-color: var(--blue);
-  margin-bottom: fluid(50,10);
+  margin-bottom: fluid(40,10);
   position: sticky;
   z-index: 5;
   top: -100px;
@@ -69,62 +69,6 @@
           user-select: none;
         }
       }
-    }
-  }
-  .burger {
-    width: fit-content;
-    margin-inline: auto;
-    text-align: center;
-    display: none;
-
-    @include tablet {
-      display: block;
-    }
-    &__wrapper {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: 
-        max-height 0.3s ease-in-out,
-        opacity 0.3s ease-in-out;
-    
-      &.active {
-        max-height: 500px;
-        opacity: 1;
-      }
-      & a 
-      {
-        position: relative;
-        &::after 
-        {
-          transition: var(--smoothly);
-          content: "";
-          width: 0px;
-          position: absolute;
-          bottom: -1px;
-          left: 50%;
-          transform: translateX(-50%);
-          height: 2px;
-          border-radius: var(--br-20);
-          background-color: var(--blue-light);
-        }
-        @include hover
-        {
-          &::after 
-          {
-            width: 100%;
-          }
-        }
-      }
-    }
-    &__menu
-    {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5px;
-      margin-bottom: 10px;
-      list-style: decimal;
     }
   }
 }

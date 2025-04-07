@@ -22,7 +22,11 @@ body
 }
 h1
 {
-  font-size: fluid(48,42);
+  font-size: fluid(68,38);
+  font-family: var(--Montserrat-Bold);
+  text-align: center;
+  margin-bottom: fluid(40,30);
+  
 }
 h2 
 {
@@ -39,7 +43,7 @@ h2
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    background-color: var(--blue-dark);
+    background-color: var(--blue-light);
     bottom: -5px;
     height: 5px;
     border-radius: 25%;

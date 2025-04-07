@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../helpers/" as *;
-.recs {
-    margin-bottom: fluid(50,10);
+.greats {
+    margin-bottom: fluid(50, 10);
     @include container(1500, 20);
     &-group {
         display: grid;
@@ -16,7 +16,15 @@
         position: relative;
         overflow: hidden;
         height: fluid(500, 400);
+        @include hover 
+        {
+            img
+            {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
         &__img {
+            transition: var(--slow);
             max-width: fluid(700, 500);
             @include absoliteCenter;
             &-wrapper {
