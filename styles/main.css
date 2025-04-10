@@ -70,6 +70,7 @@ h1 {
   font-family: var(--Montserrat-Bold);
   text-align: center;
   margin-bottom: clamp(1.875rem, 1.7307692308rem + 0.641025641vw, 2.5rem);
+  text-wrap: balance;
 }
 
 h2 {
@@ -344,8 +345,9 @@ h4 {
   overflow: hidden;
   transition: var(--slow);
   text-overflow: ellipsis;
-  transform: translateY(85%);
+  transform: translateY(78%);
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   gap: 20px;
 }
@@ -356,6 +358,10 @@ h4 {
   .swiper-slide__item {
     padding-block: 5px;
   }
+}
+.swiper-slide__item-description {
+  height: clamp(8.25rem, 6.5480769231rem + 7.5641025641vw, 15.625rem);
+  overflow-y: scroll;
 }
 .swiper-swiper-slide img {
   display: block;

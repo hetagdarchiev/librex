@@ -46,8 +46,9 @@
             overflow: hidden;
             transition: var(--slow);
             text-overflow: ellipsis;
-            transform: translateY(85%);
+            transform: translateY(78%);
             display: flex;
+            justify-content: space-between;
             flex-direction: column;
             gap: 20px;
             &:hover {
@@ -56,6 +57,12 @@
             @include tablet 
             {
                 padding-block: 5px;
+            }
+
+            &-description
+            {
+                height: fluid(250,132);
+                overflow-y: scroll;
             }
         }
     }
