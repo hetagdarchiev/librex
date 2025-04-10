@@ -1,9 +1,9 @@
 @use "../helpers/" as *;
 .swiper {
-    margin-bottom: fluid(100,10);
+    margin-bottom: fluid(100, 10);
     width: 100%;
     max-width: 1500px;
-    padding-bottom: fluid(50,20);
+    padding-bottom: fluid(50, 20);
     border-radius: var(--br-20);
     &-slide {
         background-position: center;
@@ -15,7 +15,7 @@
         position: relative;
         display: block;
         overflow: hidden;
-        height: fluid(400,250);
+        height: fluid(400, 250);
         width: fluid(300, 250);
         border-radius: var(--br-20);
         img {
@@ -46,16 +46,31 @@
             overflow: hidden;
             transition: var(--slow);
             text-overflow: ellipsis;
-            transform: translateY(85%);
+            transform: translateY(78%);
             display: flex;
+            justify-content: space-between;
             flex-direction: column;
             gap: 20px;
             &:hover {
                 transform: translateY(50px);
             }
-            @include tablet 
-            {
+            @include tablet {
                 padding-block: 5px;
+            }
+
+            &-description {
+                height: fluid(180, 132);
+                overflow-y: scroll;
+                margin-bottom: fluid(70, 60);
+                &::-webkit-scrollbar {
+                    background-color: var(--blue-gray);
+                    width: 5px;
+                    border-radius: 12px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: var(--blue);
+                    border-radius: var(--br-20);
+                }
             }
         }
     }
@@ -63,5 +78,4 @@
         display: block;
         width: 100%;
     }
-    
 }

@@ -13,9 +13,9 @@ let initSwiper = () => {
         },
         pagination: {
             el: '.swiper-pagination',
-            clickable: true,
+            clickable: false,
+            dynamicBullets: true,
             type: 'bullets',
-            dynamicBullets: true
         },
         autoplay: {
             delay: 3000,
@@ -35,6 +35,27 @@ let initSwiper = () => {
         }, 6000);
     });
 
+    fetch('http://localhost/ElectronicLibrary/librex/config/database.php')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let swiperCollection = document.querySelectorAll(".swiper-slide");
+            let collection = new Map
+            swiperCollection.forEach((el, index) => {
+                let random;
+                do {
+                    random = Math.floor(Math.random() * data.length);
+                } while (collection.has(random));
+
+                collection.set(random, true);
+                let book = data[random]
+
+                el.querySelector(".swiper-slide__item__name").textContent = book.name
+                el.querySelector('.swiper-slide__item-description').textContent = book.description
+                el.querySelector('.slide-book-img').src = book.book_img
+            })
+        }
+        );
     return swiper
 }
 

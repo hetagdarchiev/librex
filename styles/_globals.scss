@@ -11,13 +11,12 @@ body
   {
     background-color: var(--blue-gray);
     max-width: 7px;
+    border-radius: 20px;
   }
   &::-webkit-scrollbar-thumb
   {
     background-color: var(--blue);
     border-radius: var(--br-20);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
   }
 }
 h1
@@ -26,7 +25,7 @@ h1
   font-family: var(--Montserrat-Bold);
   text-align: center;
   margin-bottom: fluid(40,30);
-  
+  text-wrap: balance;
 }
 h2 
 {
