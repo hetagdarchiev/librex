@@ -26,6 +26,11 @@ let initSwiper = () => {
     });
 
     let swiperEl = document.querySelector(".swiper-wrapper")
+    let swiperCollection = document.querySelectorAll(".swiper-slide");
+    const bookName = ".swiper-slide__item__name";
+    const bookDescription = '.swiper-slide__item-description';
+    const bookImage = '.slide-book-img';
+
     swiperEl.addEventListener('touchstart', () => {
         swiper.autoplay.stop();
     });
@@ -34,28 +39,55 @@ let initSwiper = () => {
             swiper.autoplay.start();
         }, 6000);
     });
-
     fetch('http://localhost/ElectronicLibrary/librex/config/database.php')
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            let swiperCollection = document.querySelectorAll(".swiper-slide");
-            let collection = new Map
-            swiperCollection.forEach((el, index) => {
-                let random;
-                do {
-                    random = Math.floor(Math.random() * data.length);
-                } while (collection.has(random));
+            if (data.success && data.data && Array.isArray(data.data)) {
+                let collection = new Map();
+                const books = data.data;
+                swiperCollection.forEach((el, index) => {
+                    let random;
+                    do {
+                        random = Math.floor(Math.random() * books.length);
+                        if (collection.size >= books.length) {
+                            collection.clear();
+                        }
+                    } while (collection.has(random));
+                    collection.set(random, true);
+                    let book = books[random];
+                    el.querySelector(bookName).textContent = book.name;
+                    el.querySelector(bookDescription).textContent = book.description;
+                    el.querySelector(bookImage).src = book.book_img;
+                });
+            } else {
+                throw new Error('Invalid data structure');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            swiperCollection.forEach((el) => {
+                const nameEl = el.querySelector(bookName);
+                const descEl = el.querySelector(bookDescription);
+                const imgEl = el.querySelector(bookImage);
 
-                collection.set(random, true);
-                let book = data[random]
+                if (nameEl) nameEl.textContent = "Книга не найдена";
+                if (descEl) descEl.textContent = " ";
+                if (imgEl) imgEl.src = '';
+            });
+        });
 
-                el.querySelector(".swiper-slide__item__name").textContent = book.name
-                el.querySelector('.swiper-slide__item-description').textContent = book.description
-                el.querySelector('.slide-book-img').src = book.book_img
-            })
-        }
-        );
+    swiperCollection.forEach(el => {
+        el.querySelector('a').addEventListener('click', () => {
+            function localSet(key, meaning) {
+                localStorage.setItem(key, el.querySelector(meaning).textContent)
+            }
+            localSet("name", bookName)
+            localSet('description', bookDescription)
+            localSet('')
+        })
+    }
+    )
     return swiper
 }
 

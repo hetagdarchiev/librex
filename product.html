@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./node_modules/normalize/normalize.css" />
+    <link rel="stylesheet" href="./styles/products.css" />
+    <link rel="icon" href="./assets/icons/123123213.svg" type="image/svg+xml" />
+    <title>Книга</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inside-wripper container">
+        <nav class="header__novigation">
+          <ul class="header__novigation__group">
+            <li>
+              <a
+                href="#"
+                class="nav-main"
+                aria-label="All books"
+                title="Все книги"
+              >
+                Книги
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-books"
+                title="Shopping"
+                aria-label="Shopping"
+              >
+                Корзина
+              </a>
+            </li>
+            <li>
+              <a
+                href="./index.html"
+                class="logo-link"
+                aria-label="logo link"
+                title="Home"
+              >
+                <img
+                  class="logo"
+                  src="./assets/images/capyLibria.webp"
+                  alt="CapyLibria"
+                  width="100"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-other"
+                aria-label="Favorite"
+                title="Favorite"
+              >
+                Любимые
+              </a>
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="nav-us"
+                aria-label="about us"
+                title="about us"
+              >
+                О нас
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="burger">
+        <button class="burger__button">
+          <img
+            class="logo"
+            src="./assets/icons/123123213.svg"
+            alt="CapyLibria"
+            width="60"
+          />
+        </button>
+        <div class="burger__wrapper">
+          <ul class="burger__menu">
+            <li>
+              <a
+                href="./index.html"
+                class="nav-main"
+                aria-label="All books"
+                title="Все книги"
+              >
+                Главная
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-main"
+                aria-label="All books"
+                title="Все книги"
+              >
+                Книги
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-books"
+                title="Shopping"
+                aria-label="Shopping"
+              >
+                Корзина
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-other"
+                aria-label="Favorite"
+                title="Favorite"
+              >
+                Любимые
+              </a>
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="nav-us"
+                aria-label="about us"
+                title="about us"
+              >
+                О нас
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="product">
+        <div class="product__container container">
+          <div class="product__image-block">
+            <div class="product__image-wrapper">
+              <img
+                src="./assets/images/oblojka.jpg"
+                class="product__image"
+                alt="Обложка книги"
+              />
+            </div>
+            <a href="#" class="product__link">Читать</a>
+            <button type="button" class="product__button--like">
+              Понравилось
+            </button>
+          </div>
+          <div class="product__info">
+            <div class="product__header">
+              <h1 class="product__title">Название</h1>
+              <h3 class="product__author">Автор:</h3>
+            </div>
+            <div class="product__description">Описание:</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>

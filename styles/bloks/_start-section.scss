@@ -1,12 +1,12 @@
 @use "../helpers/" as *;
 .start-section {
-    padding-block: 100px;
+    padding-block: fluid(100,50);
     .main-title {
         span {
             position: relative;
             &::after {
                 content: "";
-                width: 5px;
+                width: fluid(5,2);
                 top: 50%;
                 transform: translateY(-50%);
                 border-radius: 50px;

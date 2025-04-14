@@ -1,7 +1,7 @@
 @use "./helpers/" as *;
-html{
+:root{
   --blue-gray: hsl(209, 25%, 53%);
-  --blue-light: rgb(187, 220, 252);
+  --blue-light: hsl(210, 92%, 86%);
   --blue: hsl(209, 79%, 74%);
   --blue-dark: hsl(209, 23%, 28%);
   --white: hsl(0, 0%, 100%);
