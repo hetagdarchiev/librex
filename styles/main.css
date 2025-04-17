@@ -363,7 +363,6 @@ h4 {
 }
 .swiper-slide__item-description {
   height: clamp(8.25rem, 7.5576923077rem + 3.0769230769vw, 11.25rem);
-  overflow-y: scroll;
   margin-bottom: clamp(3.75rem, 3.6057692308rem + 0.641025641vw, 4.375rem);
 }
 .swiper-slide__item-description::-webkit-scrollbar {

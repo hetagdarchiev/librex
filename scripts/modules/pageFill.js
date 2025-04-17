@@ -1,7 +1,5 @@
 let init =()=> 
 {
-    
-    console.log(localStorage);
     let author = document.querySelector('.product__author')
     author.textContent += localStorage.getItem("author")
     let name = document.querySelector('.product__title')

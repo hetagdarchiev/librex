@@ -269,14 +269,31 @@ h4 {
 }
 .product__image-wrapper {
   max-width: 320px;
+  min-width: 250px;
   width: 100%;
   height: 400px;
   overflow: hidden;
   position: relative;
+  transition: var(--smoothly);
+  text-wrap: wrap;
+}
+@media (any-hover: hover) {
+  .product__image-wrapper:hover {
+    transform: scale(1.1);
+  }
+}
+.product__image-wrapper:active {
+  transform: scale(1.1);
 }
 .product__image {
   width: 500px;
   order: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border: 8px solid var(--blue-light);
+  border-radius: var(--br-20);
+  padding: 1px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -286,7 +303,7 @@ h4 {
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   gap: 10px;
   font-size: 1.375rem;
 }

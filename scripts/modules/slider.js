@@ -37,17 +37,29 @@ let initSwiper = () => {
     const bookName = ".swiper-slide__item__name";
     const bookDescription = '.swiper-slide__item-description';
     const bookImage = '.slide-book-img';
-    
+
     function bookFilling(el, book, name, description, image) {
         el.querySelector(name).textContent = book.name
-        el.querySelector(description).textContent = book.description
+
+        function truncateText(text, maxLength = 140) 
+        {
+            if (text.length <= maxLength) {
+                return text;
+            }
+            return text.substring(0, maxLength) + '...';
+        }
+        let text = truncateText(book.description)
+
+        console.log(truncateText(text));
+
+        el.querySelector(description).textContent = text
         el.querySelector(image).src = book.img
+
     }
 
     fetch('http://localhost/ElectronicLibrary/librex/config/database.php')
         .then(response => response.json())
         .then(data => {
-            console.log(data.data);
             let books = data.data;
             let arrRandomChecker = new Map;
             let randomize = 0;
@@ -58,22 +70,20 @@ let initSwiper = () => {
                 while (arrRandomChecker.has(randomize))
                 arrRandomChecker.set(randomize)
                 let book = books[randomize]
-                console.log(book.img);
+                let l = book.description
 
-                bookFilling(el, book, bookName, bookDescription, bookImage)
+                bookFilling(el, book, bookName, bookDescription, bookImage);
 
                 el.querySelector('a').addEventListener('click', () => {
                     function localSet(key, meaning) {
                         localStorage.setItem(key, meaning)
                     }
-                    console.log(typeof book.name);
-    
-                    console.log(book.name);
-                    
+
+
                     localSet("name", book.name)
                     localSet('description', book.description)
                     localSet('author', book.author_name)
-                    localSet('img',book.img)
+                    localSet('img', book.img)
                 })
             }
             )

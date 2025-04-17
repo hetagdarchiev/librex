@@ -4,8 +4,6 @@ async function init() {
     try {
         const url = window.location.pathname.split('/');
         const page = url[url.length - 1]
-        console.log(page);
-        
         if (page === 'index.html') {
             const { default: titleTransform } = await import("./modules/animated-title.js")
             titleTransform()

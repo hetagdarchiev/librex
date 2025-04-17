@@ -61,7 +61,6 @@
 
             &-description {
                 height: fluid(180, 132);
-                overflow-y: scroll;
                 margin-bottom: fluid(70, 60);
                 &::-webkit-scrollbar {
                     background-color: var(--blue-gray);
