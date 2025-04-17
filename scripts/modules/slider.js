@@ -24,13 +24,8 @@ let initSwiper = () => {
         },
         loop: true,
     });
-
     let swiperEl = document.querySelector(".swiper-wrapper")
     let swiperCollection = document.querySelectorAll(".swiper-slide");
-    const bookName = ".swiper-slide__item__name";
-    const bookDescription = '.swiper-slide__item-description';
-    const bookImage = '.slide-book-img';
-
     swiperEl.addEventListener('touchstart', () => {
         swiper.autoplay.stop();
     });
@@ -39,30 +34,49 @@ let initSwiper = () => {
             swiper.autoplay.start();
         }, 6000);
     });
+    const bookName = ".swiper-slide__item__name";
+    const bookDescription = '.swiper-slide__item-description';
+    const bookImage = '.slide-book-img';
+    
+    function bookFilling(el, book, name, description, image) {
+        el.querySelector(name).textContent = book.name
+        el.querySelector(description).textContent = book.description
+        el.querySelector(image).src = book.img
+    }
+
     fetch('http://localhost/ElectronicLibrary/librex/config/database.php')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            if (data.success && data.data && Array.isArray(data.data)) {
-                let collection = new Map();
-                const books = data.data;
-                swiperCollection.forEach((el, index) => {
-                    let random;
-                    do {
-                        random = Math.floor(Math.random() * books.length);
-                        if (collection.size >= books.length) {
-                            collection.clear();
-                        }
-                    } while (collection.has(random));
-                    collection.set(random, true);
-                    let book = books[random];
-                    el.querySelector(bookName).textContent = book.name;
-                    el.querySelector(bookDescription).textContent = book.description;
-                    el.querySelector(bookImage).src = book.book_img;
-                });
-            } else {
-                throw new Error('Invalid data structure');
+            console.log(data.data);
+            let books = data.data;
+            let arrRandomChecker = new Map;
+            let randomize = 0;
+            swiperCollection.forEach(el => {
+                do {
+                    randomize = Math.floor(Math.random() * books.length)
+                }
+                while (arrRandomChecker.has(randomize))
+                arrRandomChecker.set(randomize)
+                let book = books[randomize]
+                console.log(book.img);
+
+                bookFilling(el, book, bookName, bookDescription, bookImage)
+
+                el.querySelector('a').addEventListener('click', () => {
+                    function localSet(key, meaning) {
+                        localStorage.setItem(key, meaning)
+                    }
+                    console.log(typeof book.name);
+    
+                    console.log(book.name);
+                    
+                    localSet("name", book.name)
+                    localSet('description', book.description)
+                    localSet('author', book.author_name)
+                    localSet('img',book.img)
+                })
             }
+            )
         })
         .catch(error => {
             console.error('Error:', error);
@@ -76,18 +90,6 @@ let initSwiper = () => {
                 if (imgEl) imgEl.src = '';
             });
         });
-
-    swiperCollection.forEach(el => {
-        el.querySelector('a').addEventListener('click', () => {
-            function localSet(key, meaning) {
-                localStorage.setItem(key, el.querySelector(meaning).textContent)
-            }
-            localSet("name", bookName)
-            localSet('description', bookDescription)
-            localSet('')
-        })
-    }
-    )
     return swiper
 }
 

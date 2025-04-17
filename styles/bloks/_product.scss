@@ -4,27 +4,28 @@
     &__container 
     {
         display: flex;
-        justify-content: left;
         flex-wrap: wrap;
         gap: fluid(50,20);
-        @include tablet 
-        {
-            justify-content: center;
-        }
+        justify-content: center;
     }
     &__image-wrapper
     {
         max-width: 320px;
+        width: 100%;
+        height: 400px;
         overflow: hidden;
+        position: relative;
     }
     &__image 
     {
         width: 500px;
         order: 0;
+        @include absoliteCenter
     }
     &__image-block 
     {
         display: flex;
+        flex: 1;
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
@@ -60,11 +61,13 @@
     }
     &__title , &__author
     {
-        margin-bottom: 20px;
+        margin-bottom: fluid(15,5);
         text-align: left;
     }
     &__info 
     {
         flex-grow: 2;
+        flex-basis: 300px;
+        max-width: 900px;
     }
 }
