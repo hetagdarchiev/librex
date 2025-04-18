@@ -16,6 +16,7 @@ let initSwiper = () => {
             clickable: false,
             dynamicBullets: true,
             type: 'bullets',
+            
         },
         autoplay: {
             delay: 3000,
@@ -49,9 +50,6 @@ let initSwiper = () => {
             return text.substring(0, maxLength) + '...';
         }
         let text = truncateText(book.description)
-
-        console.log(truncateText(text));
-
         el.querySelector(description).textContent = text
         el.querySelector(image).src = book.img
 
@@ -70,20 +68,20 @@ let initSwiper = () => {
                 while (arrRandomChecker.has(randomize))
                 arrRandomChecker.set(randomize)
                 let book = books[randomize]
-                let l = book.description
-
+                
                 bookFilling(el, book, bookName, bookDescription, bookImage);
+                console.log(book);
 
                 el.querySelector('a').addEventListener('click', () => {
                     function localSet(key, meaning) {
                         localStorage.setItem(key, meaning)
                     }
-
-
+                    localSet('id',book.id)
                     localSet("name", book.name)
                     localSet('description', book.description)
                     localSet('author', book.author_name)
                     localSet('img', book.img)
+                    localSet('genre', book.genre_name)
                 })
             }
             )

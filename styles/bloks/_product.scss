@@ -16,11 +16,11 @@
         height: 400px;
         overflow: hidden;
         position: relative;
-        transition: var(--smoothly);
+        transition: var(--slow);
         text-wrap: wrap;
         @include hover 
         {
-            transform: scale(1.1);
+            transform: scale(1.01);
         }
     }
     &__image 
@@ -29,7 +29,7 @@
         order: 0;
         object-fit: cover;
         height: 100%;
-        border: 8px solid var(--blue-light);
+        border: 8px solid var(--blue-gray);
         border-radius: var(--br-20);
         padding: 1px;
         @include absoliteCenter
@@ -54,7 +54,7 @@
         text-align: center;
         @include hover 
         {
-            outline-color: var(--blue-light);
+            outline-color: var(--blue-gray);
         }
     }
     &__link
@@ -68,10 +68,10 @@
         text-align: center;
         @include hover 
         {
-            outline-color: var(--blue-light);
+            outline-color: var(--blue-gray);
         }
     }
-    &__title , &__author
+    &__title , &__author , &__genre
     {
         margin-bottom: fluid(15,5);
         text-align: left;

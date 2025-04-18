@@ -27,10 +27,9 @@
   font-display: swap;
 }
 :root {
-  --blue-gray: hsl(209, 25%, 53%);
+  --blue: hsl(209, 25%, 53%);
   --blue-light: hsl(210, 92%, 86%);
-  --blue: hsl(209, 79%, 74%);
-  --blue-dark: hsl(209, 23%, 28%);
+  --blue-gray: hsl(209, 23%, 28%);
   --white: hsl(0, 0%, 100%);
   --Montserrat-Regular: "Montserrat-Regular";
   --Montserrat-Medium: "Montserrat-Medium";
@@ -88,8 +87,8 @@ h2::before {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  background-color: var(--blue-light);
-  bottom: -5px;
+  background-color: var(--blue-gray);
+  bottom: -7px;
   height: 5px;
   border-radius: 25%;
 }
@@ -215,7 +214,7 @@ h4 {
   font-family: var(--RussoOne-Regular);
 }
 .header__novigation__group li a:active {
-  color: var(--blue-dark);
+  color: var(--blue-gray);
 }
 .header__novigation__group li a:not(.logo-link)::after {
   content: "";
@@ -274,16 +273,16 @@ h4 {
   height: 400px;
   overflow: hidden;
   position: relative;
-  transition: var(--smoothly);
+  transition: var(--slow);
   text-wrap: wrap;
 }
 @media (any-hover: hover) {
   .product__image-wrapper:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
   }
 }
 .product__image-wrapper:active {
-  transform: scale(1.1);
+  transform: scale(1.01);
 }
 .product__image {
   width: 500px;
@@ -291,7 +290,7 @@ h4 {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
-  border: 8px solid var(--blue-light);
+  border: 8px solid var(--blue-gray);
   border-radius: var(--br-20);
   padding: 1px;
   position: absolute;
@@ -318,11 +317,11 @@ h4 {
 }
 @media (any-hover: hover) {
   .product__button--like:hover {
-    outline-color: var(--blue-light);
+    outline-color: var(--blue-gray);
   }
 }
 .product__button--like:active {
-  outline-color: var(--blue-light);
+  outline-color: var(--blue-gray);
 }
 .product__link {
   order: 2;
@@ -335,13 +334,13 @@ h4 {
 }
 @media (any-hover: hover) {
   .product__link:hover {
-    outline-color: var(--blue-light);
+    outline-color: var(--blue-gray);
   }
 }
 .product__link:active {
-  outline-color: var(--blue-light);
+  outline-color: var(--blue-gray);
 }
-.product__title, .product__author {
+.product__title, .product__author, .product__genre {
   margin-bottom: clamp(0.3125rem, 0.1682692308rem + 0.641025641vw, 0.9375rem);
   text-align: left;
 }

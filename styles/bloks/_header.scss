@@ -30,7 +30,7 @@
           transition: var(--smoothly);
           font-family: var(--RussoOne-Regular);
           &:active {
-            color: var(--blue-dark);
+            color: var(--blue-gray);
           }
           &:not(.logo-link) {
             &::after {

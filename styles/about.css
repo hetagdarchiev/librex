@@ -27,10 +27,9 @@
   font-display: swap;
 }
 :root {
-  --blue-gray: hsl(209, 25%, 53%);
+  --blue: hsl(209, 25%, 53%);
   --blue-light: hsl(210, 92%, 86%);
-  --blue: hsl(209, 79%, 74%);
-  --blue-dark: hsl(209, 23%, 28%);
+  --blue-gray: hsl(209, 23%, 28%);
   --white: hsl(0, 0%, 100%);
   --Montserrat-Regular: "Montserrat-Regular";
   --Montserrat-Medium: "Montserrat-Medium";
@@ -88,8 +87,8 @@ h2::before {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  background-color: var(--blue-light);
-  bottom: -5px;
+  background-color: var(--blue-gray);
+  bottom: -7px;
   height: 5px;
   border-radius: 25%;
 }
@@ -215,7 +214,7 @@ h4 {
   font-family: var(--RussoOne-Regular);
 }
 .header__novigation__group li a:active {
-  color: var(--blue-dark);
+  color: var(--blue-gray);
 }
 .header__novigation__group li a:not(.logo-link)::after {
   content: "";

@@ -27,10 +27,9 @@
   font-display: swap;
 }
 :root {
-  --blue-gray: hsl(209, 25%, 53%);
+  --blue: hsl(209, 25%, 53%);
   --blue-light: hsl(210, 92%, 86%);
-  --blue: hsl(209, 79%, 74%);
-  --blue-dark: hsl(209, 23%, 28%);
+  --blue-gray: hsl(209, 23%, 28%);
   --white: hsl(0, 0%, 100%);
   --Montserrat-Regular: "Montserrat-Regular";
   --Montserrat-Medium: "Montserrat-Medium";
@@ -88,8 +87,8 @@ h2::before {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  background-color: var(--blue-light);
-  bottom: -5px;
+  background-color: var(--blue-gray);
+  bottom: -7px;
   height: 5px;
   border-radius: 25%;
 }
@@ -215,7 +214,7 @@ h4 {
   font-family: var(--RussoOne-Regular);
 }
 .header__novigation__group li a:active {
-  color: var(--blue-dark);
+  color: var(--blue-gray);
 }
 .header__novigation__group li a:not(.logo-link)::after {
   content: "";
@@ -342,8 +341,8 @@ h4 {
   max-width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  background: var(--blue-dark);
-  background: hsl(from var(--blue-dark) h s l/90%);
+  background: var(--blue-gray);
+  background: hsl(from var(--blue-gray) h s l/90%);
   overflow: hidden;
   transition: var(--slow);
   text-overflow: ellipsis;
@@ -378,6 +377,9 @@ h4 {
   display: block;
   width: 100%;
 }
+.swiper-pagination-bullet {
+  background-color: var(--blue-gray);
+}
 
 .greats {
   margin-bottom: clamp(0.625rem, 0.0480769231rem + 2.5641025641vw, 3.125rem);
@@ -409,21 +411,24 @@ h4 {
 }
 .greats-item__img {
   transition: var(--slow);
-  max-width: clamp(31.25rem, 28.3653846154rem + 12.8205128205vw, 43.75rem);
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border-radius: var(--br-20);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .greats-item__img-wrapper {
-  border: 4px solid var(--blue);
+  border: 6px solid var(--blue);
   border-radius: var(--br-20);
   overflow: hidden;
   height: clamp(20rem, 17.4038461538rem + 11.5384615385vw, 31.25rem);
   width: 100%;
   position: relative;
   z-index: 2;
-  background-color: var(--blue-dark);
+  background-color: var(--blue);
 }
 .greats-item__link {
   display: flex;

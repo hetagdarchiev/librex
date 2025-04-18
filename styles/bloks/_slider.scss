@@ -42,8 +42,8 @@
             max-width: 100%;
             padding: 10px;
             box-sizing: border-box;
-            background: var(--blue-dark);
-            background: hsl(from var(--blue-dark) h s l / 90%);
+            background: var(--blue-gray);
+            background: hsl(from var(--blue-gray) h s l / 90%);
             overflow: hidden;
             transition: var(--slow);
             text-overflow: ellipsis;
@@ -77,5 +77,9 @@
     &-swiper-slide img {
         display: block;
         width: 100%;
+    }
+    &-pagination-bullet
+    {
+        background-color: var(--blue-gray);
     }
 }

@@ -25,17 +25,19 @@
         }
         &__img {
             transition: var(--slow);
-            max-width: fluid(700, 500);
+            object-fit: cover;
+            height: 100%;
+            border-radius: var(--br-20);
             @include absoliteCenter;
             &-wrapper {
-                border: 4px solid var(--blue);
+                border: 6px solid var(--blue);
                 border-radius: var(--br-20);
                 overflow: hidden;
                 height: fluid(500, 320);
                 width: 100%;
                 position: relative;
                 z-index: 2;
-                background-color: var(--blue-dark);
+                background-color: var(--blue);
             }
         }
         &__link {

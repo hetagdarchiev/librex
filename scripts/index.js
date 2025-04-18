@@ -12,7 +12,7 @@ async function init() {
         }
         if (page ==='product.html')
         {
-            const {default: filling} = await import('./modules/pageFill.js')
+            const {default: filling} = await import('./modules/productPageFill.js')
             filling();
         }
     
