@@ -18,7 +18,7 @@ let init = () => {
     description.textContent = descriptionValue
     img.src = image
     genre.textContent += genreName
-
+    
     let btn = document.querySelector('.product__button--like')
     btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -28,6 +28,7 @@ let init = () => {
             "descriptionValue": descriptionValue,
             "img": image,
             "genre": genreName,
+            'time' : Date.now(),
         })
         localStorage.setItem(bookId, obj)
 

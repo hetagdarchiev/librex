@@ -15,6 +15,11 @@ async function init() {
             const {default: filling} = await import('./modules/productPageFill.js')
             filling();
         }
+        if (page === 'catalog.html')
+        {
+            const {default: catalog} = await import ('./modules/catalog.js')
+            catalog();
+        }
     
     }
     catch (error) {

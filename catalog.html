@@ -1,11 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Каталог книг Capylibria - удобный поиск и фильтрация тысяч бесплатных электронных книг: по жанрам, авторам, годам издания и рейтингу"
+    />
+    <meta
+      name="keywords"
+      content="каталог книг, поиск книг, фильтр книг, электронная библиотека, книги по жанрам, новинки книг, популярные книги"
+    />
+    <meta name="author" content="Khetag Darchiev Olegovich" />
+    <meta name="copyright" content="Capylibria Electronic Library" />
+    <meta name="geo.region" content="RU-MOW" />
+    <link rel="icon" href="./assets/icons/123123213.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./node_modules/normalize/normalize.css" />
+    <link rel="stylesheet" href="./styles/catalog.css" />
+    <script src="scripts/index.js" type="module" defer></script>
+
+    <title>Каталог книг | Capylibria</title>
+  </head>
+  <body data-page="catalog">
+    <header class="header">
+      <div class="header__inside-wripper container">
+        <nav class="header__novigation">
+          <ul class="header__novigation__group">
+            <li>
+              <a
+                href="./catalog.html"
+                class="nav-main"
+                aria-label="All books"
+                title="Все книги"
+              >
+                Книги
+              </a>
+            </li>
+            <li>
+              <a
+                href="./profile.html"
+                class="nav-books"
+                title="Личный кабинет"
+                aria-label="Personal office"
+              >
+                Профиль
+              </a>
+            </li>
+            <li>
+              <a
+                href="./index.html"
+                class="logo-link"
+                aria-label="logo link"
+                title="Главная страница"
+              >
+                <img
+                  class="logo"
+                  src="./assets/images/capyLibria.webp"
+                  alt="CapyLibria"
+                  width="100"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="./favorites.html"
+                class="nav-other"
+                aria-label="Favorite"
+                title="Любимые книги"
+              >
+                Избранное
+              </a>
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="nav-us"
+                aria-label="about us"
+                title="о нас"
+              >
+                О нас
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="burger">
+        <button class="burger__button">
+          <img
+            class="logo"
+            src="./assets/icons/123123213.svg"
+            alt="CapyLibria"
+            width="60"
+          />
+        </button>
+        <div class="burger__wrapper">
+          <ul class="burger__menu">
+            <li>
+              <a
+                href="./index.html"
+                class="nav-main"
+                aria-label="All books"
+                title="Все книги"
+              >
+                Главная
+              </a>
+            </li>
+            <li>
+              <a
+                href="./catalog.html"
+                class="nav-main"
+                aria-label="All books"
+                title="Все книги"
+              >
+                Книги
+              </a>
+            </li>
+            <li>
+              <a
+                href="./profile.html"
+                class="nav-books"
+                title="Личный кабинет"
+                aria-label="Personal office"
+              >
+                Профиль
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-other"
+                aria-label="Favorite"
+                title="Любимые книги"
+              >
+                Избранное
+              </a>
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="nav-us"
+                aria-label="about us"
+                title="about us"
+              >
+                О нас
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="catalog">
+        <section class="catalog__container container">
+            <aside class="catalog__filters">
+                <form action="" class="catalog__filters-form">
+                    <fieldset>
+                        <!-- Кастомный dropdown для авторов -->
+                        <div class="catalog__filters-authors">
+                            <h4>Автор</h4>
+                            <div class="custom-dropdown" data-dropdown>
+                                <div class="dropdown__selected" data-dropdown-toggle>
+                                    <span class="dropdown__placeholder">Выберите автора</span>
+                                    <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <ul class="dropdown__options">
+                                    <li class="dropdown__option" data-value="null">Не выбран</li>
+                                    <!-- Динамически добавленные options будут здесь -->
+                                </ul>
+                                <select name="author" id="authors" class="dropdown__native-select" hidden>
+                                    <option value="null"></option>
+                                </select>
+                            </div>
+                        </div>
+        
+                        <!-- Кастомный dropdown для жанров -->
+                        <div class="catalog__filters-genres">
+                            <h4>Жанр</h4>
+                            <div class="custom-dropdown" data-dropdown>
+                                <div class="dropdown__selected" data-dropdown-toggle>
+                                    <span class="dropdown__placeholder">Выберите жанр</span>
+                                    <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <ul class="dropdown__options">
+                                    <li class="dropdown__option" data-value="null">Не выбран</li>
+                                </ul>
+                                <select name="genre" id="genres" class="dropdown__native-select" hidden>
+                                    <option value="null"></option>
+                                </select>
+                            </div>
+                        </div>
+        
+                        <!-- Кастомный dropdown для даты -->
+                        <div class="catalog__filters-data">
+                            <h4>Дата выхода</h4>
+                            <div class="custom-dropdown" data-dropdown>
+                                <div class="dropdown__selected" data-dropdown-toggle>
+                                    <span class="dropdown__placeholder">Выберите период</span>
+                                    <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <ul class="dropdown__options">
+                                    <li class="dropdown__option" data-value="3">20-ый век</li>
+                                    <li class="dropdown__option" data-value="2">19-ый век</li>
+                                    <li class="dropdown__option" data-value="1">18-ый век</li>
+                                </ul>
+                                <select name="date" id="date" class="dropdown__native-select" hidden>
+                                    <option value="0" selected disabled></option>
+                                    <option value="3">20-ый век</option>
+                                    <option value="2">19-ый век</option>
+                                    <option value="1">18-ый век</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </aside>
+        </section>
+    </main>
+  </body>
 </html>
