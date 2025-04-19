@@ -7,3 +7,15 @@
 
 @use "bloks/header";
 @use "bloks/catalogFilter";
+@use "bloks/catalogItems";
+
+.catalog
+{
+    &__container
+    {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+}

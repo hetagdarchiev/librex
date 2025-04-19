@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="./node_modules/normalize/normalize.css" />
     <link rel="stylesheet" href="./styles/catalog.css" />
     <script src="scripts/index.js" type="module" defer></script>
-
     <title>Каталог книг | Capylibria</title>
   </head>
   <body data-page="catalog">
@@ -150,76 +149,253 @@
       </div>
     </header>
     <main class="catalog">
-        <section class="catalog__container container">
-            <aside class="catalog__filters">
-                <form action="" class="catalog__filters-form">
-                    <fieldset>
-                        <!-- Кастомный dropdown для авторов -->
-                        <div class="catalog__filters-authors">
-                            <h4>Автор</h4>
-                            <div class="custom-dropdown" data-dropdown>
-                                <div class="dropdown__selected" data-dropdown-toggle>
-                                    <span class="dropdown__placeholder">Выберите автора</span>
-                                    <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                </div>
-                                <ul class="dropdown__options">
-                                    <li class="dropdown__option" data-value="null">Не выбран</li>
-                                    <!-- Динамически добавленные options будут здесь -->
-                                </ul>
-                                <select name="author" id="authors" class="dropdown__native-select" hidden>
-                                    <option value="null"></option>
-                                </select>
-                            </div>
-                        </div>
-        
-                        <!-- Кастомный dropdown для жанров -->
-                        <div class="catalog__filters-genres">
-                            <h4>Жанр</h4>
-                            <div class="custom-dropdown" data-dropdown>
-                                <div class="dropdown__selected" data-dropdown-toggle>
-                                    <span class="dropdown__placeholder">Выберите жанр</span>
-                                    <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                </div>
-                                <ul class="dropdown__options">
-                                    <li class="dropdown__option" data-value="null">Не выбран</li>
-                                </ul>
-                                <select name="genre" id="genres" class="dropdown__native-select" hidden>
-                                    <option value="null"></option>
-                                </select>
-                            </div>
-                        </div>
-        
-                        <!-- Кастомный dropdown для даты -->
-                        <div class="catalog__filters-data">
-                            <h4>Дата выхода</h4>
-                            <div class="custom-dropdown" data-dropdown>
-                                <div class="dropdown__selected" data-dropdown-toggle>
-                                    <span class="dropdown__placeholder">Выберите период</span>
-                                    <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                </div>
-                                <ul class="dropdown__options">
-                                    <li class="dropdown__option" data-value="3">20-ый век</li>
-                                    <li class="dropdown__option" data-value="2">19-ый век</li>
-                                    <li class="dropdown__option" data-value="1">18-ый век</li>
-                                </ul>
-                                <select name="date" id="date" class="dropdown__native-select" hidden>
-                                    <option value="0" selected disabled></option>
-                                    <option value="3">20-ый век</option>
-                                    <option value="2">19-ый век</option>
-                                    <option value="1">18-ый век</option>
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </aside>
-        </section>
+      <section class="catalog__container container">
+        <aside class="catalog__filters">
+          <form action="" class="catalog__filters-form">
+            <fieldset>
+              <div class="catalog__filters-wrapper">
+                <!-- Кастомный dropdown для авторов -->
+                <div class="catalog__filters-authors">
+                  <h4>Автор</h4>
+                  <div class="custom-dropdown" data-dropdown>
+                    <div class="dropdown__selected" data-dropdown-toggle>
+                      <span class="dropdown__placeholder">Выберите автора</span>
+                      <svg
+                        class="dropdown__arrow"
+                        width="12"
+                        height="8"
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 1.5L6 6.5L11 1.5"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </div>
+                    <ul class="dropdown__options">
+                      <li class="dropdown__option" data-value="null">
+                        Не выбран
+                      </li>
+                      <!-- Динамически добавленные options будут здесь -->
+                    </ul>
+                    <select
+                      name="author"
+                      id="authors"
+                      class="dropdown__native-select"
+                      hidden
+                    >
+                      <option value="null"></option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Кастомный dropdown для жанров -->
+                <div class="catalog__filters-genres">
+                  <h4>Жанр</h4>
+                  <div class="custom-dropdown" data-dropdown>
+                    <div class="dropdown__selected" data-dropdown-toggle>
+                      <span class="dropdown__placeholder">Выберите жанр</span>
+                      <svg
+                        class="dropdown__arrow"
+                        width="12"
+                        height="8"
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 1.5L6 6.5L11 1.5"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </div>
+                    <ul class="dropdown__options">
+                      <li class="dropdown__option" data-value="null">
+                        Не выбран
+                      </li>
+                    </ul>
+                    <select
+                      name="genre"
+                      id="genres"
+                      class="dropdown__native-select"
+                      hidden
+                    >
+                      <option value="null"></option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Кастомный dropdown для даты -->
+                <div class="catalog__filters-data">
+                  <h4>Дата выхода</h4>
+                  <div class="custom-dropdown" data-dropdown>
+                    <div class="dropdown__selected" data-dropdown-toggle>
+                      <span class="dropdown__placeholder">Выберите период</span>
+                      <svg
+                        class="dropdown__arrow"
+                        width="12"
+                        height="8"
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 1.5L6 6.5L11 1.5"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </div>
+                    <ul class="dropdown__options">
+                      <li class="dropdown__option" data-value="3">20-ый век</li>
+                      <li class="dropdown__option" data-value="2">19-ый век</li>
+                      <li class="dropdown__option" data-value="1">18-ый век</li>
+                    </ul>
+                    <select
+                      name="date"
+                      id="date"
+                      class="dropdown__native-select"
+                      hidden
+                    >
+                      <option value="0" selected disabled></option>
+                      <option value="3">20-ый век</option>
+                      <option value="2">19-ый век</option>
+                      <option value="1">18-ый век</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <button title="Применить" type="button" class="catalog__filters__button">Применить</button>
+            </fieldset>
+          </form>
+        </aside>
+        <div class="catalog__group">
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+          <a href="" class="catalog__item">
+            <div class="catalog__item__wrapper">
+              <img src="./assets/images/oblojka.jpg" class="catalog__item__img " alt="">
+            </div>
+            <h4 class="catalog__item__title">Текст</h4>
+          </a>
+        </div>
+      </section>
     </main>
   </body>
 </html>

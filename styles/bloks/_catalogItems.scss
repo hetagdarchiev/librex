@@ -1,0 +1,49 @@
+@use '../helpers/' as *;
+.catalog 
+{
+    &__group
+    {
+        display: grid;
+        gap: 5px;
+        flex: 1;
+        grid-template-columns: repeat(3,1fr);
+        flex-basis: 500px;
+    }
+    &__item 
+    {
+        padding-inline: 10px;
+        min-width: 300px;
+        padding-block: 10px 5px;
+        border-radius: var(--br-20);
+        background-color: var(--blue-gray);
+        &__title 
+        {
+            padding: 5px;
+            text-align: center;
+            text-overflow: ellipsis;   
+            overflow: hidden;
+        }
+        &__wrapper
+        {
+            border-radius: var(--br-20);
+            overflow: hidden;
+            height: 390px;
+        }
+        &__img
+        {
+            object-fit: cover;
+            position: relative;
+            height: 100%;
+            width: 500px;
+            object-position: center;
+            transition: var(--smoothly);
+        }
+        &:hover 
+        {
+            .catalog__item__img
+            {
+                transform: scale(1.01);
+            }
+        }
+    }
+}

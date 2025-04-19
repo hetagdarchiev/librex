@@ -75,6 +75,8 @@ const initCustomDropdowns = () => {
         });
     });
 };
+ let text = document.querySelector(".catalog__item__title")
+ text
 
 let initialization = init();
 

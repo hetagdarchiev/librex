@@ -6,11 +6,14 @@
         user-select: none;
     }
     &__filters {
+        flex: 1;
         max-height: 600px;
         max-width: 400px;
         height: 600px;
         display: flex;
+        flex-basis: 290px;
         flex-direction: column;
+        min-width: 300px;
 
         &-form {
             display: flex;
@@ -18,7 +21,11 @@
             flex: 1;
             overflow-y: auto;
 
+
             fieldset {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
                 flex: 1;
                 border-radius: var(--br-20);
                 border: 4px solid var(--blue-gray);
@@ -94,6 +101,19 @@
                         background-color: var(--white);
                     }
                 }
+            }
+        }
+        &__button
+        {
+            padding: 5px;
+            border-radius: var(--br-20);
+            font-size: rem(18);
+            transition: var(--smoothly);
+            outline: 4px solid transparent;
+            outline-color: var(--blue-gray);
+            @include hover 
+            {
+                background-color: var(--blue-gray);
             }
         }
     }
