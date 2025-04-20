@@ -1,83 +1,137 @@
-let init = () => {
+const init = () => {
     fetch('http://localhost/ElectronicLibrary/librex/config/database.php')
         .then(response => response.json())
         .then(data => {
-            let books = data.data;
+            const books = data.data;
             console.log(books);
-            const authorsDropdown = document.querySelector('.catalog__filters-authors .custom-dropdown');
-            const genresDropdown = document.querySelector('.catalog__filters-genres .custom-dropdown');
-            const nativeAuthorsSelect = document.querySelector('#authors');
-            const nativeGenresSelect = document.querySelector('#genres');
-            nativeAuthorsSelect.innerHTML = '<option value="null"></option>';
-            nativeGenresSelect.innerHTML = '<option value="null"></option>';
-            authorsDropdown.querySelector('.dropdown__options').innerHTML = '<li class="dropdown__option" data-value="null">Не выбран</li>';
-            genresDropdown.querySelector('.dropdown__options').innerHTML = '<li class="dropdown__option" data-value="null">Не выбран</li>';
-            let authorChecker = new Set();
-            let genresChecker = new Set();
-            let totalYears = 0;
-            books.forEach(element => {
-                authorChecker.add(element.author_name);
-                genresChecker.add(element.genre_name);
-                totalYears += element.year;
-            });
-            console.log('Средний год:', Math.round(totalYears / books.length));
-            authorChecker.forEach(author => {
-                nativeAuthorsSelect.innerHTML += `<option value="${author}">${author}</option>`;
-                authorsDropdown.querySelector('.dropdown__options').innerHTML += `
-                    <li class="dropdown__option" data-value="${author}">${author}</li>
+            const booksGroup = document.querySelector('.catalog__group')
+            const btn = document.querySelector(".catalog__filters__button")
+            books.forEach((book) => {
+                booksGroup.innerHTML += `
+                <a href="./product.html" class="catalog__item">
+                <div class="catalog__item__wrapper">
+                <img src="${book.img || './assets/images/oblojka.jpg'}" class="catalog__item__img" alt="${book.title}">
+                </div>
+                <h4 class="catalog__item__title">${book.name || 'Текст'}</h4>
+                <span class="book-id" style="display:none">${book.id}</span>
+                <span class="book-genre" style="display:none">${book.genre_name}</span>
+                <span class="book-author" style="display:none">${book.author_name}</span>
+                <span class="book-description" style="display:none">${book.description}</span>
+                </a>
                 `;
             });
-            genresChecker.forEach(genre => {
-                nativeGenresSelect.innerHTML += `<option value="${genre}">${genre}</option>`;
-                genresDropdown.querySelector('.dropdown__options').innerHTML += `
-                    <li class="dropdown__option" data-value="${genre}">${genre}</li>
-                `;
-            });
+            const booksPage = booksGroup.querySelectorAll('.catalog__item')
+            booksPage.forEach(el => {
+                let title = el.querySelector('.catalog__item__title')
+                let imageBbook = el.querySelector('.catalog__item__img')
+                let genre = el.querySelector('.book-genre')
+                let author = el.querySelector('.book-author')
+                let description = el.querySelector('.book-description')
+                console.log(imageBbook.src);
+
+                el.addEventListener('click', (event) => {
+                    localStorage.setItem('name', title.textContent)
+                    localStorage.setItem('img', imageBbook.src)
+                    localStorage.setItem('genre', genre.textContent)
+                    localStorage.setItem('author', author.textContent)
+                    localStorage.setItem('description', description.textContent)
+                })
+            }
+            )
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault
+            })
+
+
+
+            initDropdowns(books);
             initCustomDropdowns();
         })
         .catch(error => console.error('Ошибка загрузки данных:', error));
 };
 
+const initDropdowns = (books) => {
+    const dropdownConfig = [
+        {
+            selector: '.catalog__filters-authors',
+            property: 'author_name',
+            nativeId: 'authors'
+        },
+        {
+            selector: '.catalog__filters-genres',
+            property: 'genre_name',
+            nativeId: 'genres'
+        }
+    ];
 
-const initCustomDropdowns = () => {
-    document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
-        const toggle = dropdown.querySelector('[data-dropdown-toggle]');
-        const options = dropdown.querySelector('.dropdown__options');
-        const nativeSelect = dropdown.querySelector('.dropdown__native-select');
-        const placeholder = dropdown.querySelector('.dropdown__placeholder');
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-            document.querySelectorAll('.custom-dropdown').forEach(d => {
-                if (d !== dropdown) {
-                    d.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
-                    d.querySelector('.dropdown__options').setAttribute('aria-hidden', 'true');
-                }
-            });
-            toggle.setAttribute('aria-expanded', !isExpanded);
-            options.setAttribute('aria-hidden', isExpanded);
-        });
-        dropdown.querySelectorAll('.dropdown__option').forEach(option => {
-            option.addEventListener('click', () => {
-                const value = option.getAttribute('data-value');
-                const text = option.textContent;
-                placeholder.textContent = text;
-                nativeSelect.value = value;
-                toggle.setAttribute('aria-expanded', 'false');
-                options.setAttribute('aria-hidden', 'true');
-            });
+    dropdownConfig.forEach(config => {
+        const dropdown = document.querySelector(`${config.selector} .custom-dropdown`);
+        const nativeSelect = document.querySelector(`#${config.nativeId}`);
+        const optionsContainer = dropdown.querySelector('.dropdown__options');
+
+        nativeSelect.innerHTML = '<option value="null"></option>';
+        optionsContainer.innerHTML = '<li class="dropdown__option" data-value="null">Не выбран</li>';
+
+        const uniqueValues = [...new Set(books.map(book => book[config.property]))];
+
+        uniqueValues.forEach(value => {
+            nativeSelect.innerHTML += `<option value="${value}">${value}</option>`;
+            optionsContainer.innerHTML += `<li class="dropdown__option" data-value="${value}">${value}</li>`;
         });
     });
+};
+
+const initCustomDropdowns = () => {
+    const dropdowns = document.querySelectorAll('.custom-dropdown');
+
+    const handleDropdownToggle = (dropdown, e) => {
+        e.stopPropagation();
+        const toggle = dropdown.querySelector('[data-dropdown-toggle]');
+        const options = dropdown.querySelector('.dropdown__options');
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
+                d.querySelector('.dropdown__options').setAttribute('aria-hidden', 'true');
+            }
+        });
+
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        options.setAttribute('aria-hidden', isExpanded);
+    };
+
+    const handleOptionClick = (dropdown, option) => {
+        const value = option.getAttribute('data-value');
+        const text = option.textContent;
+        const placeholder = dropdown.querySelector('.dropdown__placeholder');
+        const nativeSelect = dropdown.querySelector('.dropdown__native-select');
+        const toggle = dropdown.querySelector('[data-dropdown-toggle]');
+        const options = dropdown.querySelector('.dropdown__options');
+
+        placeholder.textContent = text;
+        nativeSelect.value = value;
+        toggle.setAttribute('aria-expanded', 'false');
+        options.setAttribute('aria-hidden', 'true');
+    };
+
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('[data-dropdown-toggle]');
+        toggle.addEventListener('click', (e) => handleDropdownToggle(dropdown, e));
+
+        dropdown.querySelectorAll('.dropdown__option').forEach(option => {
+            option.addEventListener('click', () => handleOptionClick(dropdown, option));
+        });
+    });
+
     document.addEventListener('click', () => {
-        document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+        dropdowns.forEach(dropdown => {
             dropdown.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', 'false');
             dropdown.querySelector('.dropdown__options').setAttribute('aria-hidden', 'true');
         });
     });
 };
- let text = document.querySelector(".catalog__item__title")
- text
 
-let initialization = init();
-
-export default initialization
+const initialization = init();
+export default initialization;

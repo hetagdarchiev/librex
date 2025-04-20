@@ -1,7 +1,10 @@
+
 @use "fonts";
 @use "variables";
 @use "globals";
 @use "default";
+
+@use './helpers/'as *;
 
 @use "bloks/burger-menu";
 
@@ -16,6 +19,9 @@
         display: flex;
         justify-content: space-between;
         gap: 50px;
-        flex-wrap: wrap;
+        @include tablet 
+        {
+            flex-wrap: wrap;
+        }
     }
 }

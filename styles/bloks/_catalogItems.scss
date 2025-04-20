@@ -6,13 +6,13 @@
         display: grid;
         gap: 5px;
         flex: 1;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         flex-basis: 500px;
     }
     &__item 
     {
         padding-inline: 10px;
-        min-width: 300px;
+        max-height: 450px;
         padding-block: 10px 5px;
         border-radius: var(--br-20);
         background-color: var(--blue-gray);

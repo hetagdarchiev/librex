@@ -9,15 +9,12 @@
         flex: 1;
         max-height: 600px;
         max-width: 400px;
-        height: 600px;
         display: flex;
         flex-basis: 290px;
         flex-direction: column;
-        min-width: 300px;
+        min-width: 250px;
 
         &-form {
-            display: flex;
-            flex-direction: column;
             flex: 1;
             overflow-y: auto;
 
@@ -115,6 +112,10 @@
             {
                 background-color: var(--blue-gray);
             }
+        }
+        h4 
+        {
+            margin-bottom: 5px;
         }
     }
 }
