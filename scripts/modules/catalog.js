@@ -6,45 +6,81 @@ const init = () => {
             console.log(books);
             const booksGroup = document.querySelector('.catalog__group')
             const btn = document.querySelector(".catalog__filters__button")
-            books.forEach((book) => {
-                booksGroup.innerHTML += `
-                <a href="./product.html" class="catalog__item">
-                <div class="catalog__item__wrapper">
-                <img src="${book.img || './assets/images/oblojka.jpg'}" class="catalog__item__img" alt="${book.title}">
-                </div>
-                <h4 class="catalog__item__title">${book.name || 'Текст'}</h4>
-                <span class="book-id" style="display:none">${book.id}</span>
-                <span class="book-genre" style="display:none">${book.genre_name}</span>
-                <span class="book-author" style="display:none">${book.author_name}</span>
-                <span class="book-description" style="display:none">${book.description}</span>
-                </a>
+            function createBookCard(book) {
+                return `
+                  <a href="./product.html" class="catalog__item">
+                    <div class="catalog__item__wrapper">
+                      <img src="${book.img || './assets/images/oblojka.jpg'}" 
+                           class="catalog__item__img" 
+                           alt="${book.title || 'Обложка книги'}">
+                    </div>
+                    <h4 class="catalog__item__title">${book.name || 'Текст'}</h4>
+                    <span class="book-id" style="display:none">${book.id}</span>
+                    <span class="book-genre" style="display:none">${book.genre_name || ''}</span>
+                    <span class="book-author" style="display:none">${book.author_name || ''}</span>
+                    <span class="book-description" style="display:none">${book.description || ''}</span>
+                  </a>
                 `;
-            });
-            const booksPage = booksGroup.querySelectorAll('.catalog__item')
-            booksPage.forEach(el => {
-                let title = el.querySelector('.catalog__item__title')
-                let imageBbook = el.querySelector('.catalog__item__img')
-                let genre = el.querySelector('.book-genre')
-                let author = el.querySelector('.book-author')
-                let description = el.querySelector('.book-description')
-                console.log(imageBbook.src);
-
-                el.addEventListener('click', (event) => {
-                    localStorage.setItem('name', title.textContent)
-                    localStorage.setItem('img', imageBbook.src)
-                    localStorage.setItem('genre', genre.textContent)
-                    localStorage.setItem('author', author.textContent)
-                    localStorage.setItem('description', description.textContent)
-                })
             }
-            )
-
+            function setupBookClickHandlers() {
+                const booksPage = document.querySelectorAll('.catalog__item');
+                booksPage.forEach(el => {
+                    el.addEventListener('click', (event) => {
+                        const title = el.querySelector('.catalog__item__title');
+                        const imageBbook = el.querySelector('.catalog__item__img');
+                        const genre = el.querySelector('.book-genre');
+                        const author = el.querySelector('.book-author');
+                        const description = el.querySelector('.book-description');
+                        
+                        localStorage.setItem('name', title.textContent);
+                        localStorage.setItem('img', imageBbook.src);
+                        localStorage.setItem('genre', genre.textContent);
+                        localStorage.setItem('author', author.textContent);
+                        localStorage.setItem('description', description.textContent);
+                    });
+                });
+            }
+            books.forEach((book) => {
+                booksGroup.innerHTML += createBookCard(book)
+            });
+            setupBookClickHandlers()
             btn.addEventListener('click', (e) => {
-                e.preventDefault
+                e.preventDefault()
+                const filter = document.querySelectorAll('.dropdown__placeholder')
+                const authorFilter = filter[0].textContent
+                const genreFilter = filter[1].textContent
+                const year = (filter[2].textContent.slice(0, 2) - 1) + "01"
+                console.log(year);
+
+                booksGroup.innerHTML = ""
+                let hasbook = false;
+                console.log(booksGroup.innerHTML);
+
+                books.forEach((book) => {
+                    console.log(year);
+
+                    if (authorFilter === book.author_name) {
+                        booksGroup.innerHTML += createBookCard(book)
+                        hasbook = true
+                    }
+                    else if (genreFilter === book.genre_name) {
+                        booksGroup.innerHTML += createBookCard(book)
+                        hasbook = true
+                    }
+                    else if (Number(book.year) > Number(year)
+                        && Number(book.year) < Number(year) + 100) {
+                        console.log(book.year);
+
+                        booksGroup.innerHTML += createBookCard(book)
+                        hasbook = true
+                    }
+                })
+                if (!hasbook) {
+                    booksGroup.innerHTML = "Книг по такой фильтрации не найдено!"
+                }
+                setupBookClickHandlers()
             })
-
-
-
+            
             initDropdowns(books);
             initCustomDropdowns();
         })
