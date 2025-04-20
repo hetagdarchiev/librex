@@ -19,6 +19,7 @@ const init = () => {
                     <span class="book-genre" style="display:none">${book.genre_name || ''}</span>
                     <span class="book-author" style="display:none">${book.author_name || ''}</span>
                     <span class="book-description" style="display:none">${book.description || ''}</span>
+                    <span class="book-id" style="display:none">${book.id || ''}</span>
                   </a>
                 `;
             }
@@ -31,12 +32,14 @@ const init = () => {
                         const genre = el.querySelector('.book-genre');
                         const author = el.querySelector('.book-author');
                         const description = el.querySelector('.book-description');
+                        const id = el.querySelector('.book-id');
                         
                         localStorage.setItem('name', title.textContent);
                         localStorage.setItem('img', imageBbook.src);
                         localStorage.setItem('genre', genre.textContent);
                         localStorage.setItem('author', author.textContent);
                         localStorage.setItem('description', description.textContent);
+                        localStorage.setItem('id', id.textContent);
                     });
                 });
             }
