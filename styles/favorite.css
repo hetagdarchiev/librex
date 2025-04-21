@@ -259,4 +259,42 @@ h4 {
     padding-top: 10px;
     border-radius: 0 0 30% 30%;
   }
+}
+.favorites__item {
+  background-color: var(--blue-gray);
+  border-radius: var(--br-20);
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-bottom: clamp(0.3125rem, 0.2403846154rem + 0.3205128205vw, 0.625rem);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  transition: var(--slow);
+}
+@media (any-hover: hover) {
+  .favorites__item:hover {
+    transform: scale(1.01);
+  }
+}
+.favorites__item:active {
+  transform: scale(1.01);
+}
+.favorites__image-wrapper {
+  max-width: 200px;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.favorites__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.favorites__content {
+  max-width: 900px;
 }/*# sourceMappingURL=favorite.css.map */

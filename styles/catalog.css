@@ -387,7 +387,6 @@ h4 {
 }
 .catalog__item {
   padding-inline: 10px;
-  max-height: 450px;
   max-width: 500px;
   padding-block: 10px 5px;
   border-radius: var(--br-20);

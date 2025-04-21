@@ -1,0 +1,36 @@
+@use "../helpers/" as *;
+
+.favorites {
+    &__item {
+        background-color: var(--blue-gray);
+        border-radius: var(--br-20);
+        max-width: fit-content;
+        margin-inline: auto;
+        margin-bottom: fluid(10,5);
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        transition: var(--slow);
+        @include hover 
+        {
+            transform: scale(1.01);
+        }
+    }
+    &__image-wrapper {
+        max-width: 200px;
+        height: 200px;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    &__image
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__content {
+        max-width: 900px;
+    }
+}

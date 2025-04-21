@@ -20,7 +20,10 @@ async function init() {
             const {default: catalog} = await import ('./modules/catalog.js')
             catalog();
         }
-    
+        if(page === 'favorites.html')
+        {
+            const {default: favorites} = await import('./modules/favorites.js')
+        }
     }
     catch (error) {
         console.log(error);

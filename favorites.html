@@ -20,7 +20,7 @@
     <script src="scripts/index.js" type="module" defer></script>
     <title>Избранные книги | Capylibria</title>
   </head>
-  <body data-page="favorites">
+  <body data-page="favorites" class="favorites">
     <header class="header">
       <div class="header__inside-wripper container">
         <nav class="header__novigation">
@@ -148,5 +148,19 @@
         </div>
       </div>
     </header>
+    <section class="favorites__wrapper container">
+      <a href="./product.html" class="favorites__item">
+        <div class="favorites__image-wrapper">
+          <img src="./assets/images/oblojka.jpg" alt="" class="favorites__image"/>
+        </div>
+        <div class="favorites__content">
+          <h3 class="favorites__title">name</h3>
+          <p class="favorites__description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
+            itaque dolorum similique id cupiditate, ad in sed nulla dolor nam?
+          </p>
+        </div>
+      </a>
+    </section>
   </body>
 </html>
