@@ -37,7 +37,7 @@ let init = () => {
         }
         
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        const isAlreadyAdded = favorites.some(fav => fav.id === currentBook.id);
+        const isAlreadyAdded = favorites.some(item => item.id === currentBook.id);
         
         if (!isAlreadyAdded) {
             favorites.push(currentBook);
