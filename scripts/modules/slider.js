@@ -70,7 +70,6 @@ let initSwiper = () => {
                 let book = books[randomize]
                 
                 bookFilling(el, book, bookName, bookDescription, bookImage);
-                console.log(book);
 
                 el.querySelector('a').addEventListener('click', () => {
                     function localSet(key, meaning) {

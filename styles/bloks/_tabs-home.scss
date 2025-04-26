@@ -1,0 +1,77 @@
+@use "../helpers/" as *;
+.news-book
+{
+    &__item ,.future-book__item
+    {
+        width: 250px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        background-color: var(--blue-gray);
+        border-radius: var(--br-20);
+        margin-bottom: fluid(15,10);
+        overflow: hidden;
+        padding-inline: 10px;
+        padding-block: 10px;
+        &__img 
+        {
+            border-radius: var(--br-20) ;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 250px;
+            flex-grow: 1;
+            img 
+            {
+                transition: var(--slow);
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                @include absoliteCenter;
+                @include hover 
+                {
+                    transform: translate(-50%,-50%) scale(1.05);
+                }
+            }
+        }
+        h4 
+        {
+            padding-block: 5px;
+            margin-bottom: 0px;
+            text-align: center;
+            background-color: var(--blue-gray);
+        }
+    }
+    &__list , .future-book__list
+    {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .tabs {
+        &__controls
+        {
+            margin-inline: auto;
+            max-width: fit-content;
+            margin-bottom: fluid(15,10);
+        }
+        &__control
+        {
+            border: 4px solid var(--blue-gray);
+            transition: var(--smoothly);
+            border-radius: var(--br-20);
+            padding: 10px 20px;
+            font-size: rem(24,18);
+            @include hover 
+            {
+                background-color: var(--blue-gray);
+            }
+        }
+        &__panel 
+        {
+            display: none;
+        }
+    }
+}
