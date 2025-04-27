@@ -142,37 +142,40 @@
       </div>
     </header>
     <main>
-      <form action="" class="registration">
+      <form action="./php/profile-form.php" class="registration" method="post">
         <fieldset>
-          <h2>Регистрация</h2>
+          <legend>
+            <h3>Регистрация</h3>
+          </legend>
+          <div>
+            <label for="registration__login">Введите желаемый логин</label>
+            <input
+            type="text"
+            title="Введите логин"
+            name="login"
+            aria-label="Введите логин"
+            class="registration__login"
+            required
+            autocomplete ='username'
+            />
+          </div>
           <div>
             <label for="registration__email">Введите вашу почту</label>
             <input
               type="email"
+              name="email"
               title="Введите почту"
               aria-label="Введите почту"
               class="registration__email"
               required
-            />
-          </div>
-          <div>
-            <label for="registration__email">Введите желаемый логин</label>
-            <input
-              type="email"
-              title="Введите логин"
-              aria-label="Введите логин"
-              class="registration__email"
-              required
-              value=""
+              autocomplete="email"
             />
           </div>
           <div>
             <label for="">Введите ваш пароль</label>
             <input
               type="password"
-              value=""
-              name=""
-              id=""
+              name="password"
               required
               aria-label="Введите пароль"
               minlength="8"
@@ -182,7 +185,7 @@
               >Хотя бы 1 букву (A-Z, a-z).
               >Хотя бы 1 цифру (0-9). 
               >Можно использовать спецсимволы: @$!%*#?&"
-              autocomplete="off"
+              autocomplete="new-password"
             />
           </div>
           <button type="submit">Отправить</button>
