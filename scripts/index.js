@@ -32,6 +32,9 @@ async function init() {
         if (page === 'favorites.html') {
             const { default: favorites } = await import('./modules/favorites.js');
         }
+        if (page === 'profile.html') {
+            const { default: profile } = await import('./modules/profile.js');
+        }
     }
     catch (error) {
         console.log(error);

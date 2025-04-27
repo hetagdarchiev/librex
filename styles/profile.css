@@ -259,4 +259,46 @@ h4 {
     padding-top: 10px;
     border-radius: 0 0 30% 30%;
   }
+}
+form {
+  max-width: 600px;
+  margin-inline: auto;
+}
+form fieldset {
+  padding: 20px;
+}
+form fieldset div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+}
+form fieldset div label {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  font-size: 1.25rem;
+}
+form fieldset input {
+  padding: 5px 10px;
+}
+form fieldset input:focus {
+  border-color: var(--blue-gray);
+}
+form fieldset button {
+  padding: 5px 10px;
+}
+@media (any-hover: hover) {
+  form fieldset button:hover {
+    border-color: var(--blue-gray);
+  }
+}
+form fieldset button:active {
+  border-color: var(--blue-gray);
+}
+form fieldset,
+form input,
+form button {
+  transition: var(--smoothly);
+  border-radius: var(--br-20);
+  border: 4px solid var(--blue-light);
 }/*# sourceMappingURL=profile.css.map */

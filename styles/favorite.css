@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Montserrat-Bold";
   src: url("../assets/fonts/Montserrat/Montserrat-Bold/Montserrat-Bold.woff2") format("woff2"), url("../assets/fonts/Montserrat/Montserrat-Bold/Montserrat-Bold.woff") format("woff");
@@ -276,6 +277,7 @@ h4 {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
   transition: var(--slow);
 }
 @media (any-hover: hover) {
@@ -303,6 +305,8 @@ h4 {
 }
 .favorites__content {
   max-width: 900px;
+  flex: 1;
+  flex-basis: 300px;
 }
 .favorites__button {
   max-width: -moz-fit-content;
@@ -321,4 +325,14 @@ h4 {
 }
 .favorites__button:active {
   transform: scale(1.05);
+}
+@media (max-width: 721px) {
+  .favorites__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Макс. строки */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 100ch; /* ~100 символов */
+    word-wrap: break-word;
+  }
 }/*# sourceMappingURL=favorite.css.map */

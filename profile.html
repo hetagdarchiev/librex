@@ -13,7 +13,7 @@
     <script src="scripts/index.js" type="module" defer></script>
     <title>Профиль | Capylibria</title>
   </head>
-  <body>
+  <body data-page="profile">
     <header class="header">
       <div class="header__inside-wripper container">
         <nav class="header__novigation">
@@ -142,7 +142,52 @@
       </div>
     </header>
     <main>
-      
+      <form action="" class="registration">
+        <fieldset>
+          <h2>Регистрация</h2>
+          <div>
+            <label for="registration__email">Введите вашу почту</label>
+            <input
+              type="email"
+              title="Введите почту"
+              aria-label="Введите почту"
+              class="registration__email"
+              required
+            />
+          </div>
+          <div>
+            <label for="registration__email">Введите желаемый логин</label>
+            <input
+              type="email"
+              title="Введите логин"
+              aria-label="Введите логин"
+              class="registration__email"
+              required
+              value=""
+            />
+          </div>
+          <div>
+            <label for="">Введите ваш пароль</label>
+            <input
+              type="password"
+              value=""
+              name=""
+              id=""
+              required
+              aria-label="Введите пароль"
+              minlength="8"
+              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
+              title="Пароль должен содержать: 
+              >Минимум 8 символов. 
+              >Хотя бы 1 букву (A-Z, a-z).
+              >Хотя бы 1 цифру (0-9). 
+              >Можно использовать спецсимволы: @$!%*#?&"
+              autocomplete="current-password"
+            />
+          </div>
+          <button type="submit">Отправить</button>
+        </fieldset>
+      </form>
     </main>
     <footer></footer>
   </body>

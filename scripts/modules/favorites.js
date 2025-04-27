@@ -23,7 +23,7 @@ let init = () => {
       <button class="favorites__button">X</button></div>`
     }
     let buttons = fillingSection.querySelectorAll('.favorites__button')
-    
+
     if (localStorage.getItem("favorites") === "{}") {
         localStorage.removeItem("favorites");
     }
@@ -44,14 +44,13 @@ let init = () => {
     )
     let items = fillingSection.querySelectorAll('.favorites__item')
     items.forEach(element => {
-        element.addEventListener('click',(e)=> 
-        {
-            localStorage.setItem('name',element.querySelector('.favorites__title').textContent)
-            localStorage.setItem('description',element.querySelector('.favorites__description').textContent)
-            localStorage.setItem('img',element.querySelector('.favorites__image').src)
-            localStorage.setItem('author',element.querySelector('.author').textContent)
-            localStorage.setItem('genre',element.querySelector('.genre').textContent)
-            localStorage.setItem('id',element.querySelector('.identifier').textContent)
+        element.addEventListener('click', (e) => {
+            localStorage.setItem('name', element.querySelector('.favorites__title').textContent)
+            localStorage.setItem('description', element.querySelector('.favorites__description').textContent)
+            localStorage.setItem('img', element.querySelector('.favorites__image').src)
+            localStorage.setItem('author', element.querySelector('.author').textContent)
+            localStorage.setItem('genre', element.querySelector('.genre').textContent)
+            localStorage.setItem('id', element.querySelector('.identifier').textContent)
         })
     });
 }
