@@ -1,8 +1,10 @@
 @use "./helpers/" as *;
 :root{
+  --dark: hsl(0, 0%, 0%);
   --blue: hsl(209, 25%, 53%);
-  --blue-light: hsl(210, 92%, 86%);
   --blue-gray: hsl(209, 23%, 28%);
+  --blue-light: hsl(210, 92%, 86%);
+  --blue-white: hsl(209, 100%, 94%);
   --white: hsl(0, 0%, 100%);
 
   --Montserrat-Regular: "Montserrat-Regular";

@@ -1,0 +1,48 @@
+@use'../styles/helpers/'as *;
+@use "fonts";
+@use "variables";
+@use "globals";
+@use "default";
+@use "bloks/burger-menu";
+@use "bloks/header";
+
+.reader 
+{
+    background-color: var(--white);
+    color: var(--dark);
+    padding: 10px;
+    border-radius: var(--br-20);
+    line-height: 150%;
+    font-family: var(--Montserrat-Medium);
+    font-size: fluid(22,16);
+    word-spacing: 5px;
+    overflow-wrap: break-word;
+    text-align: justify;
+    h3 
+    {
+        padding-block: 10px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h4 
+    {
+        text-align: center;
+    }
+    blockquote 
+    {
+        background-color: var(--blue-white);
+        padding: 5px 10px;
+        border-radius: var(--br-20);
+    }
+}
+.main-reader
+{
+    .container 
+    {
+        @include container(1920,20);
+        @include tablet 
+        {
+            padding-inline: 10px;
+        }
+    }
+}

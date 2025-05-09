@@ -1,0 +1,64 @@
+@use "../helpers/" as *;
+
+.favorites {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    &__item {
+        background-color: var(--blue-gray);
+        border-radius: var(--br-20);
+        max-width: fit-content;
+        margin-bottom: fluid(10, 5);
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        transition: var(--slow);
+        @include hover {
+            transform: scale(1.01);
+        }
+    }
+    &__image-wrapper {
+        width: 150px;
+        border-radius: var(--br-20);
+        height: 200px;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__content {
+        max-width: 900px;
+        flex: 1;
+        flex-basis: 300px;
+    }
+    &__button {
+        max-width: fit-content;
+        max-height: fit-content;
+        padding: 5px 10px;
+        background-color: var(--blue-gray);
+        border-radius: 11px;
+        transition: var(--slow);
+        @include hover {
+            transform: scale(1.05);
+        }
+    }
+    &__description {
+        @include tablet {
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* Макс. строки */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-width: 100ch; /* ~100 символов */
+            word-wrap: break-word;
+        }
+    }
+}

@@ -28,11 +28,27 @@ let init = () => {
                 element.querySelector('img').src = book.img
                 element.querySelector('h4').textContent = book.name
                 element.innerHTML += `
-    <span class="id" style="display:none;">${book.id}</span>  
-    <span class="genre" style="display:none;">${book.genre_name}</span>
-    <span class="author" style="display:none;">${book.author_name}</span>
-    <span class="description" style="display:none;">${book.description}</span>
-`;
+                <span class="id" style="display:none;">${book.id}</span>  
+                <span class="genre" style="display:none;">${book.genre_name}</span>
+                <span class="author" style="display:none;">${book.author_name}</span>
+                <span class="description" style="display:none;">${book.description}</span>
+                `;
+
+                element.addEventListener('click',()=> 
+                {
+                    let id = element.querySelector('.id').textContent
+                    let genre = element.querySelector('.genre').textContent
+                    let author = element.querySelector('.author').textContent
+                    let img = element.querySelector('img').src
+                    let description = element.querySelector('.description').textContent
+                    let name = element.querySelector('h4').textContent
+                    localStorage.setItem('name', name)
+                    localStorage.setItem('id', id)
+                    localStorage.setItem('genre', genre)
+                    localStorage.setItem('author', author)
+                    localStorage.setItem('img', img)
+                    localStorage.setItem('description', description)
+                })
             });
         }
         )

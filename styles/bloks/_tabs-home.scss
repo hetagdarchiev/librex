@@ -3,7 +3,6 @@
 {
     &__item ,.future-book__item
     {
-        width: 250px;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -15,6 +14,10 @@
         overflow: hidden;
         padding-inline: 10px;
         padding-block: 10px;
+        flex-grow: 1;
+        width: 100%;
+        max-width: 300px;
+        flex-basis: 250px;
         &__img 
         {
             border-radius: var(--br-20) ;
@@ -48,6 +51,7 @@
     {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 20px;
     }
     .tabs {

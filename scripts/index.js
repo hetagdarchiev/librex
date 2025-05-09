@@ -9,7 +9,6 @@ async function init() {
             titleTransform();
             try {
                 const { default: slider } = await import("./modules/slider.js");
-                
             }
             catch (err) {
                 console.error("Slider error:", err);
@@ -34,6 +33,10 @@ async function init() {
         }
         if (page === 'profile.html') {
             const { default: profile } = await import('./modules/profile.js');
+        }
+        if(page === 'reader.html')
+        {
+            const {default: reader} = await import('./modules/reader.js');
         }
     }
     catch (error) {
