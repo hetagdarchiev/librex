@@ -3,8 +3,14 @@
 @use "globals";
 @use "default";
 
-@use './helpers/'as *;
+@use "./helpers/" as *;
 
 @use "bloks/burger-menu";
 @use "bloks/header";
 @use "bloks/profileForms";
+@use "bloks/tabs-profile";
+@use './bloks/profile-wrapper';
+
+.forms__wrapper {
+    display: none;
+}

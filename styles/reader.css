@@ -45,7 +45,8 @@
   --spacingSection: 50px;
   --smoothly: .2s ease-in;
   --slow: .3s ease;
-  --br-20: 20px ;
+  --br-20: 20px;
+  --br-10: 10px;
 }
 
 body {

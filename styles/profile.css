@@ -45,7 +45,8 @@
   --spacingSection: 50px;
   --smoothly: .2s ease-in;
   --slow: .3s ease;
-  --br-20: 20px ;
+  --br-20: 20px;
+  --br-10: 10px;
 }
 
 body {
@@ -264,6 +265,7 @@ h4 {
   }
 }
 form {
+  display: none;
   max-width: 600px;
   margin-inline: auto;
 }
@@ -287,21 +289,64 @@ form fieldset input {
 form fieldset input:focus {
   border-color: var(--blue-gray);
 }
-form fieldset button {
-  padding: 5px 10px;
-}
-@media (any-hover: hover) {
-  form fieldset button:hover {
-    border-color: var(--blue-gray);
-  }
-}
-form fieldset button:active {
-  border-color: var(--blue-gray);
-}
 form fieldset,
 form input,
 form button {
   transition: var(--smoothly);
   border-radius: var(--br-20);
   border: 4px solid var(--blue-light);
+}
+
+button {
+  display: block;
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  border: 4px solid var(--blue-light);
+  border-radius: var(--br-20);
+  transition: var(--slow);
+}
+@media (any-hover: hover) {
+  button:hover {
+    border-color: var(--blue-gray);
+  }
+}
+button:active {
+  border-color: var(--blue-gray);
+}
+button:focus, button:active, button:focus, button:focus-visible, button:active {
+  border: 4px solid var(--blue-light) !important;
+  border-radius: var(--br-10) !important;
+}
+
+.tabs-form {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+}
+.profile__wrapper-img {
+  width: clamp(18.75rem, 15.8653846154rem + 12.8205128205vw, 31.25rem);
+  height: clamp(25rem, 23.5576923077rem + 6.4102564103vw, 31.25rem);
+  overflow: hidden;
+  border-radius: var(--br-20);
+  border: 4px solid var(--blue-light);
+}
+.profile__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: grayscale(100%) brightness(0.9);
+}
+.profile__leave {
+  justify-self: flex-end;
+}
+
+.forms__wrapper {
+  display: none;
 }/*# sourceMappingURL=profile.css.map */

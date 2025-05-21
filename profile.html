@@ -141,57 +141,126 @@
         </div>
       </div>
     </header>
-    <main>
-      <form action="./php/profile-form.php" class="registration" method="post">
-        <fieldset>
-          <legend>
-            <h3>Регистрация</h3>
-          </legend>
-          <div>
-            <label for="registration__login">Введите желаемый логин</label>
-            <input
-            type="text"
-            title="Введите логин"
-            name="login"
-            aria-label="Введите логин"
-            class="registration__login"
-            required
-            autocomplete ='username'
-            />
-          </div>
-          <div>
-            <label for="registration__email">Введите вашу почту</label>
-            <input
-              type="email"
-              name="email"
-              title="Введите почту"
-              aria-label="Введите почту"
-              class="registration__email"
-              required
-              autocomplete="email"
-            />
-          </div>
-          <div>
-            <label for="">Введите ваш пароль</label>
-            <input
-              type="password"
-              name="password"
-              required
-              aria-label="Введите пароль"
-              minlength="8"
-              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
-              title="Пароль должен содержать: 
+    <main class="profile">
+      <div class="forms__wrapper">
+        <div class="tabs-form">
+          <button class="tabs-form__button">Вход</button>
+          <button class="tabs-form__button">Регистрация</button>
+        </div>
+        <form action="" class="entry active">
+          <fieldset>
+            <legend>
+              <h3>Вход</h3>
+            </legend>
+            <div>
+              <label for="entry__login">Введите логин</label>
+              <input
+                type="text"
+                title="Введите логин"
+                name="login"
+                aria-label="Введите логин"
+                class="entry__login"
+                required
+                autocomplete="username"
+              />
+            </div>
+            <div>
+              <label for="entry__email">Введите вашу почту</label>
+              <input
+                type="email"
+                name="email"
+                title="Введите почту"
+                aria-label="Введите почту"
+                class="entry__email"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div>
+              <label for="">Введите ваш пароль</label>
+              <input
+                type="password"
+                name="password"
+                required
+                aria-label="Введите пароль"
+                minlength="8"
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
+                title="Пароль должен содержать: 
               >Минимум 8 символов. 
               >Хотя бы 1 букву (A-Z, a-z).
               >Хотя бы 1 цифру (0-9). 
               >Можно использовать спецсимволы: @$!%*#?&"
-              autocomplete="new-password"
-            />
+                autocomplete="new-password"
+              />
+            </div>
+            <button type="submit">Отправить</button>
+          </fieldset>
+        </form>
+        <form
+          action="./php/profile-base/profile-form.php"
+          class="registration"
+          method="post"
+        >
+          <fieldset>
+            <legend>
+              <h3>Регистрация</h3>
+            </legend>
+            <div>
+              <label for="registration__login">Введите желаемый логин</label>
+              <input
+                type="text"
+                title="Введите логин"
+                name="login"
+                aria-label="Введите логин"
+                class="registration__login"
+                required
+                autocomplete="username"
+              />
+            </div>
+            <div>
+              <label for="registration__email">Введите вашу почту</label>
+              <input
+                type="email"
+                name="email"
+                title="Введите почту"
+                aria-label="Введите почту"
+                class="registration__email"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div>
+              <label for="">Введите ваш пароль</label>
+              <input
+                type="password"
+                name="password"
+                required
+                aria-label="Введите пароль"
+                minlength="8"
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
+                title="Пароль должен содержать: 
+              >Минимум 8 символов. 
+              >Хотя бы 1 букву (A-Z, a-z).
+              >Хотя бы 1 цифру (0-9). 
+              >Можно использовать спецсимволы: @$!%*#?&"
+                autocomplete="new-password"
+              />
+            </div>
+            <button type="submit">Отправить</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="profile__wrapper container">
+        <div class="profile">
+          <div class="profile__wrapper-img">
+            <img src="" alt="Profile Image" class="profile__img" />
           </div>
-          <button type="submit">Отправить</button>
-        </fieldset>
-      </form>
+          <h1 class="profile__name">Хетош</р>
+        </div>
+        <button title="Выйти" class="profile__leave">Выйти</button>
+      </div>
     </main>
     <footer></footer>
   </body>
+  <script></script>
 </html>

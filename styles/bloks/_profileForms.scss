@@ -1,5 +1,6 @@
 @use "../helpers/" as *;
 form {
+    display: none;
     max-width: 600px;
     margin-inline: auto;
     fieldset {
@@ -21,12 +22,6 @@ form {
                 border-color: var(--blue-gray);
             }
         }
-        button {
-            padding: 5px 10px;
-            @include hover {
-                border-color: var(--blue-gray);
-            }
-        }
     }
     fieldset,
     input,
@@ -34,5 +29,25 @@ form {
         transition: var(--smoothly);
         border-radius: var(--br-20);
         border: 4px solid var(--blue-light);
+    }
+}
+
+button {
+    display: block;
+    padding: 5px 10px;
+    font-size: rem(20);
+    border: 4px solid var(--blue-light);
+    border-radius: var(--br-20);
+    transition: var(--slow);
+    @include hover {
+        border-color: var(--blue-gray);
+    }
+    &:focus,
+    &:active,
+    &:focus,
+    &:focus-visible,
+    &:active {
+        border: 4px solid var(--blue-light) !important;
+        border-radius: var(--br-10) !important;
     }
 }
