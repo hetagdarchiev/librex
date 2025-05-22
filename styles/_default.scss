@@ -1,16 +1,17 @@
 @use "./helpers" as *;
 
-.container
-{
-  @include container(1440,20)
+.container {
+  @include container(1440, 20);
 }
-.scale 
-{
+.scale {
   transform: scale(1.1);
 }
-.active 
-{
+.active {
   display: block !important;
   opacity: 100% !important;
   visibility: visible !important;
+}
+.hidden {
+  display: none;
+  opacity: 0%;
 }

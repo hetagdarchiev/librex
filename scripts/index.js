@@ -33,12 +33,12 @@ async function init() {
         }
         if (page === 'profile.html') {
             const { default: profile } = await import('./modules/profile.js');
-            const {default: tabs} = await import('./modules/tabs-profile.js')
-            const {default: img} = await import('./modules/randomize-img-profile.js')
+            const { default: tabs } = await import('./modules/tabs-profile.js')
+            const { default: img } = await import('./modules/randomize-img-profile.js')
+            
         }
-        if(page === 'reader.html')
-        {
-            const {default: reader} = await import('./modules/reader.js');
+        if (page === 'reader.html') {
+            const { default: reader } = await import('./modules/reader.js');
         }
     }
     catch (error) {

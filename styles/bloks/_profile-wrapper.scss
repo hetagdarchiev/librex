@@ -1,19 +1,30 @@
 @use "../helpers/" as *;
 .profile {
-    display: flex;
-    gap: 20px;
+    &__wrapper {
+        display: none;
+    }
+    &__user {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
     &__wrapper-img {
         width: fluid(500, 300);
         height: fluid(500, 400);
         overflow: hidden;
         border-radius: var(--br-20);
         border: 4px solid var(--blue-light);
+        flex-grow: 1;
+        max-width: 500px;
+        min-width: 250px;
     }
     &__img {
         object-fit: cover;
         height: 100%;
         width: 100%;
         filter: grayscale(100%) brightness(0.9);
+        object-position: top;
     }
     &__leave {
         justify-self: flex-end;

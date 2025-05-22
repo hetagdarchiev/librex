@@ -26,7 +26,6 @@ let init = () => {
             let readList = document.querySelector('.reader')
             const foundIndex = binarySearch(list, bookIdentifier);
             if (foundIndex !== -1) {
-                console.log("Найденная книга:", list[foundIndex]);
                 readList.innerHTML = list[foundIndex].text
             }
             if (!readList.innerHTML.trim()) {
