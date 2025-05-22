@@ -31,7 +31,10 @@ form {
         border: 4px solid var(--blue-light);
     }
 }
-
+.forms__wrapper 
+{
+    display: none;
+}
 button:not(.burger__button) {
     display: block;
     padding: 5px 10px;

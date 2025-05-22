@@ -122,6 +122,12 @@ h4 {
   visibility: visible !important;
 }
 
+.hidden {
+  display: none !important;
+  opacity: 0% !important;
+  visibility: hidden !important;
+}
+
 .burger {
   width: -moz-fit-content;
   width: fit-content;

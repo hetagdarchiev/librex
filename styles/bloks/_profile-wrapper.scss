@@ -29,4 +29,10 @@
     &__leave {
         justify-self: flex-end;
     }
+    &__container
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
