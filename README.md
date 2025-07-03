@@ -34,8 +34,10 @@
   <li>Доступ к phpMyAdmin</li>
   <li>Файл базы данных `library.sql` (находится в `librex/config/`)</li>
 </ul>
+
 <br>
 <br>
+
 ![ENG](https://img.shields.io/badge/-ENG-red)
 <h1>Instructions for configuring the LibreX electronic library</h1>
 <h2>Installing and configuring the database</h2>
