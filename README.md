@@ -1,3 +1,4 @@
+<h1>RU</h1>
 <h1>Инструкция по настройке электронной библиотеки LibreX</h1>
 <h2>Установка и настройка базы данных</h2>
 <p>Для работы электронной библиотеки LibreX требуется серверная среда XAMPP и база данных MySQL.</p>
@@ -32,4 +33,41 @@
   <li>Установленный XAMPP (или аналогичный серверный пакет)</li>
   <li>Доступ к phpMyAdmin</li>
   <li>Файл базы данных `library.sql` (находится в `librex/config/`)</li>
+</ul>
+
+<h1>ENG</h1>
+<h1>Instructions for configuring the LibreX electronic library</h1>
+<h2>Installing and configuring the database</h2>
+<p>The LibreX electronic library requires the XAMPP server environment and a MySQL database to function.</p>
+<h3>Connecting to the database:</h3>
+
+<ol>
+  <li>In the librex/config/ folder, there is a library.sql file, which is a SQL database dump of the books.</li>
+  <li>Open the phpMyAdmin control panel (usually available at http://localhost/phpmyadmin).</li>
+  <li>
+    <p>Create a new database named library:</p>
+    <ul>
+      <li>Click "Create Database"</li>
+      <li>Enter a name: library</li>
+      <li>Select utf8_general_ci encoding</li>
+      <li>Click "Create"</li>
+</ul>
+</li>
+<li>
+    <p>Import the data:</p>
+    <ul>
+      <li>Select the created library database</li>
+      <li>Go to the "Import" tab</li>
+      <li>Click "Select File" and specify library.sql from the 'librex/config/' folder</li>
+      <li>Click "Next" to start the import</li>
+    </ul>
+  </li>
+  <li>After successful import, refresh the application page.</li>
+</ol>
+
+  <h2>Requirements</h2>
+<ul>
+  <li>Installed XAMPP (or a similar server package)</li>
+  <li>Access to phpMyAdmin</li>
+  <li>Database file `library.sql` (located in `librex/config/`)</li>
 </ul>
