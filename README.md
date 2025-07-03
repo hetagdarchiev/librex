@@ -36,7 +36,7 @@
 </ul>
 <br>
 <br>
-<p>ENG</p>
+![ENG](https://img.shields.io/badge/-ENG-red)
 <h1>Instructions for configuring the LibreX electronic library</h1>
 <h2>Installing and configuring the database</h2>
 <p>The LibreX electronic library requires the XAMPP server environment and a MySQL database to function.</p>
