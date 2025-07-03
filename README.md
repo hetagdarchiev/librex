@@ -35,7 +35,7 @@
   <li>Файл базы данных `library.sql` (находится в `librex/config/`)</li>
 </ul>
 
-<h1>ENG</h1>
+<p>ENG</p>
 <h1>Instructions for configuring the LibreX electronic library</h1>
 <h2>Installing and configuring the database</h2>
 <p>The LibreX electronic library requires the XAMPP server environment and a MySQL database to function.</p>
